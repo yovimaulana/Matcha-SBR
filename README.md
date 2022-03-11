@@ -1,6 +1,9 @@
 ```sql
 
-1. GET api/users
+1. GET api/users?role={{USER}}
+
+    -- kalau role = '' -> get all
+    select * from users
     
     -- description: mendapatkan seluruh user yang memiliki role = USER
 
