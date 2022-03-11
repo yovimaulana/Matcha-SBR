@@ -1,4 +1,4 @@
-```
+```sql
 
 1. GET api/users
     
