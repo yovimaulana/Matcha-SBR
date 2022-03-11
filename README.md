@@ -42,6 +42,9 @@
 
 2. GET api/kegiatan?type={{jenis_kegiatan}}&status={{active}}
 
+    -- kalau type & status = '' -> get all
+    select * from kegiatan
+
     -- description: mendapatkan daftar kegiatan berdasarkan tipe dan status nya
 
     -- nilai dari variabel {{jenis_kegiatan}} = matching / assessment
