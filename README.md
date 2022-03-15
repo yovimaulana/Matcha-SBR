@@ -205,7 +205,7 @@
     group by (id_user, name)
 
     -- get summary alokasi petugas matching -> data['summary']: ....
-    select id_kegiatan, count(case id_user is not null then 1 end ) teralokasi, count(case id_user is null then 1 end) belum_teralokasi, count(*) total_data_matching 
+    select id_kegiatan, count(case when id_user is not null then 1 end ) teralokasi, count(case when id_user is null then 1 end) belum_teralokasi, count(*) total_data_matching 
     from alokasi_petugas_matching where id_kegiatan = {{id_kegiatan}} group by id_kegiatan
 
 
@@ -374,7 +374,7 @@
     }
 
     -- get summary progres matching petugas
-    select id_kegiatan, count(case is_matching is not null then 1 end ) sudah_matching, count(case is_matching is null then 1 end) belum_matching, count(*) total_data_matching 
+    select id_kegiatan, count(case when is_matching is not null then 1 end ) sudah_matching, count(case when is_matching is null then 1 end) belum_matching, count(*) total_data_matching 
     from alokasi_petugas_matching where id_kegiatan = {{id_kegiatan}} and id_user = {{id_user}} group by id_kegiatan
 
     -- get 1 data spool untuk matching
@@ -422,17 +422,17 @@
         business_aktivitas_perusahaan.kbli kbli_aktivitas,
 
         provinsi_id
-        case(area_provinsi.nama is null then "-" else area_provinsi.nama end) nama_provinsi,        
-        case(area_provinsi.kode is null then "-" else area_provinsi.kode end) kode_provinsi,
+        (case when area_provinsi.nama is null then "-" else area_provinsi.nama end) nama_provinsi,        
+        (case when area_provinsi.kode is null then "-" else area_provinsi.kode end) kode_provinsi,
         kabupaten_kota_id,
-        case(area_kabupaten_kota.nama is null then "-" else area_kabupaten_kota.nama end) nama_kabupaten_kota,
-        case(area_kabupaten_kota.kode is null then "-" else area_kabupaten_kota.kode end) kode_kabupaten_kota,
+        (case when area_kabupaten_kota.nama is null then "-" else area_kabupaten_kota.nama end) nama_kabupaten_kota,
+        (case when area_kabupaten_kota.kode is null then "-" else area_kabupaten_kota.kode end) kode_kabupaten_kota,
         kecamatan_id,
-        case(area_kecamatan.nama is null then "-" else area_kecamatan.nama end) nama_kecamatan,
-        case(area_kecamatan.kode is null then "-" else area_kecamatan.kode end) kode_kecamatan,
+        (case when area_kecamatan.nama is null then "-" else area_kecamatan.nama end) nama_kecamatan,
+        (case when area_kecamatan.kode is null then "-" else area_kecamatan.kode end) kode_kecamatan,
         kelurahan_desa_id,
-        case(area_kelurahan_desa.nama is null then "-" else area_kelurahan_desa.nama end) nama_kelurahan_desa,
-        case(area_kelurahan_desa.kode is null then "-" else area_kelurahan_desa.kode end) kode_kelurahan_desa
+        (case when area_kelurahan_desa.nama is null then "-" else area_kelurahan_desa.nama end) nama_kelurahan_desa,
+        (case when area_kelurahan_desa.kode is null then "-" else area_kelurahan_desa.kode end) kode_kelurahan_desa
 
 
         FROM master_sbr_temp AS FT_TBL FULL OUTER JOIN
@@ -735,7 +735,7 @@
     group by (id_user, name)
 
     -- get summary alokasi petugas assessment -> data['summary']: ....
-    select id_kegiatan, count(case id_user is not null then 1 end ) teralokasi, count(case id_user is null then 1 end) belum_teralokasi, count(*) total_data_assessment 
+    select id_kegiatan, count(case when id_user is not null then 1 end ) teralokasi, count(case when id_user is null then 1 end) belum_teralokasi, count(*) total_data_assessment 
     from alokasi_petugas_assessment where id_kegiatan = {{id_kegiatan}} group by id_kegiatan
 
 
@@ -884,7 +884,7 @@
     }
 
     -- get summary progres assessment petugas
-    select id_kegiatan, count(case is_assessment is not null then 1 end ) sudah_assessment, count(case is_assessment is null then 1 end) belum_assessment, count(*) total_data_assessment 
+    select id_kegiatan, count(case when is_assessment is not null then 1 end ) sudah_assessment, count(case when is_assessment is null then 1 end) belum_assessment, count(*) total_data_assessment 
     from alokasi_petugas_assessment where id_kegiatan = {{id_kegiatan}} and id_user = {{id_user}} group by id_kegiatan
 
     -- get 1 data sbr untuk assessment
