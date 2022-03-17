@@ -1,6 +1,6 @@
 ```sql
 
-1. GET api/users?role={{USER}}
+1. GET api/user?role={{USER}}
 
     -- kalau role = '' -> get all
     select * from users
