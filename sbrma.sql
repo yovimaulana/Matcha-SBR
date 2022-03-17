@@ -198,7 +198,7 @@ create table users (
 
 create table alokasi_petugas_matching (
 
-    id int identity(1,1) primary key,
+    id bigint identity(1,1) primary key,
     id_user int null,
     id_kegiatan int not null,
     id_spool int not null,
