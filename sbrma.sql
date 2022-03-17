@@ -13,7 +13,7 @@ create table kegiatan (
 
 create table data_spool (
 
-    id_spool int identity(1,1) primary key,
+    id_spool bigint identity(1,1) primary key,
     id_kegiatan int not null,
     idsbr varchar(255) null,
     sumber_data varchar(255) null,
