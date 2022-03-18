@@ -396,63 +396,73 @@
 
     -- query untuk dapatkan 25 matching teratas untuk dimatching manual dengan 1 data spool    
     DECLARE
-    @nama nvarchar(250),   
-    @alamat nvarchar(250),
-	@provinsi char(2)
+@nama nvarchar(250),   
+@alamat nvarchar(250),
+@provinsi char(2)
 
-    SET @nama="{{ nama_perusahaan }}"
-    SET	@alamat="{{ alamat }}"
-    SET @provinsi="{{ provinsi }}"
+SET @nama='PKS II MOPOLI RAYA, PT'
+SET	@alamat='JL MEULABOH-TUTUT KM 47'
+SET @provinsi='11'
     
-    select top 25 * from
+select top 25 * from
+(
+    SELECT 
+	FT_TBL.id id_perusahaan,
+    LTRIM(RTRIM(FT_TBL.kode)) as idsbr,
+    LTRIM(RTRIM(FT_TBL.nama)) as nama_perusahaan,
+    LTRIM(RTRIM(FT_TBL.nama_komersial)) as nama_komersial,
+    LTRIM(RTRIM(FT_TBL.alamat)) as alamat,                
     (
-        SELECT 
-        LTRIM(RTRIM(kode)) as idsbr,
-        LTRIM(RTRIM(nama)) as nama_perusahaan,
-        LTRIM(RTRIM(nama_komersial)) as nama_komersial,
-        LTRIM(RTRIM(alamat)) as alamat,                
-        (
-            (2.0*(CASE WHEN KEY_TBL.RANK IS NULL then 0 else KEY_TBL.RANK end)) +
-            (1.9*(CASE WHEN KEY_TBL2.RANK IS NULL then 0 else KEY_TBL2.RANK end))
-        ) as skor_matching,
+        (3.0*(CASE WHEN KEY_TBL.RANK IS NULL then 0 else KEY_TBL.RANK end)) +
+        (1.5*(CASE WHEN KEY_TBL2.RANK IS NULL then 0 else KEY_TBL2.RANK end))
+    ) as skor_matching,
+	KEY_TBL.RANK rank_nama,
+	KEY_TBL2.RANK rank_alamat,
+	(
+		CASE WHEN KEY_TBL.RANK is not null and KEY_TBL2.RANK is not null THEN 3.0 * KEY_TBL.RANK + 1.5 * KEY_TBL2.RANK
+			 WHEN KEY_TBL.RANK is not null and KEY_TBL2.RANK is null THEN 2.0 * KEY_TBL.RANK
+			 else 0
+		end
+	) skor_kalo,	
+    kode_pos,         
+    business_alamat_telepon_perusahaan.nomor_telepon, 
+    business_aktivitas_perusahaan.aktivitas aktivitas_perusahaan, 
+    business_aktivitas_perusahaan.kbli kbli_aktivitas,
 
-        kode_pos,         
-        business_alamat_telepon_perusahaan.nomor_telepon, 
-        business_aktivitas_perusahaan.aktivitas aktivitas_perusahaan, 
-        business_aktivitas_perusahaan.kbli kbli_aktivitas,
-
-        provinsi_id
-        (case when area_provinsi.nama is null then "-" else area_provinsi.nama end) nama_provinsi,        
-        (case when area_provinsi.kode is null then "-" else area_provinsi.kode end) kode_provinsi,
-        kabupaten_kota_id,
-        (case when area_kabupaten_kota.nama is null then "-" else area_kabupaten_kota.nama end) nama_kabupaten_kota,
-        (case when area_kabupaten_kota.kode is null then "-" else area_kabupaten_kota.kode end) kode_kabupaten_kota,
-        kecamatan_id,
-        (case when area_kecamatan.nama is null then "-" else area_kecamatan.nama end) nama_kecamatan,
-        (case when area_kecamatan.kode is null then "-" else area_kecamatan.kode end) kode_kecamatan,
-        kelurahan_desa_id,
-        (case when area_kelurahan_desa.nama is null then "-" else area_kelurahan_desa.nama end) nama_kelurahan_desa,
-        (case when area_kelurahan_desa.kode is null then "-" else area_kelurahan_desa.kode end) kode_kelurahan_desa
+    FT_TBL.provinsi_id,
+    (case when area_provinsi.nama is null then '-' else area_provinsi.nama end) nama_provinsi,        
+    (case when area_provinsi.kode is null then '-' else area_provinsi.kode end) kode_provinsi,
+    FT_TBL.kabupaten_kota_id,
+    (case when area_kabupaten_kota.nama is null then '-' else area_kabupaten_kota.nama end) nama_kabupaten_kota,
+    (case when area_kabupaten_kota.kode is null then '-' else area_kabupaten_kota.kode end) kode_kabupaten_kota,
+    FT_TBL.kecamatan_id,
+    (case when area_kecamatan.nama is null then '-' else area_kecamatan.nama end) nama_kecamatan,
+    (case when area_kecamatan.kode is null then '-' else area_kecamatan.kode end) kode_kecamatan,
+    FT_TBL.kelurahan_desa_id,
+    (case when area_kelurahan_desa.nama is null then '-' else area_kelurahan_desa.nama end) nama_kelurahan_desa,
+    (case when area_kelurahan_desa.kode is null then '-' else area_kelurahan_desa.kode end) kode_kelurahan_desa
 
 
-        FROM master_sbr_temp AS FT_TBL FULL OUTER JOIN
-            FREETEXTTABLE ( master_sbr_temp, nama, @nama ) AS KEY_TBL
-        ON FT_TBL.kode = KEY_TBL.[KEY]
+    FROM matcha_master_sbr_temp AS FT_TBL 
+    
+    FULL OUTER JOIN
+        FREETEXTTABLE ( matcha_master_sbr_temp, nama, @nama ) AS KEY_TBL
+        ON FT_TBL.id = KEY_TBL.[KEY]
 
-        FULL OUTER JOIN
-        FREETEXTTABLE ( master_sbr_temp, alamat, @alamat ) AS KEY_TBL2
-        ON FT_TBL.kode = KEY_TBL2.[KEY]
+    FULL OUTER JOIN
+        FREETEXTTABLE ( matcha_master_sbr_temp, alamat, @alamat, 1057 ) AS KEY_TBL2
+        ON FT_TBL.id = KEY_TBL2.[KEY]
 
-        left join business_aktivitas_perusahaan on business_aktivitas_perusahaan.perusahaan_id = master_sbr_temp.id
-        left join business_alamat_telepon_perusahaan on business_alamat_telepon_perusahaan.perusahaan_id = master_sbr_temp.id
-        left join area_provinsi on area_provinsi.id = master_sbr_temp.provinsi_id
-        left join area_kabupaten_kota on area_kabupaten_kota.id = master_sbr_temp.kabupaten_kota_id
-        left join area_kecamatan on area_kecamatan.id = master_sbr_temp.kecamatan_id
-        left join area_kelurahan_desa on area_kelurahan_desa.id = master_sbr_temp.kelurahan_desa_id
+    left join business_aktivitas_perusahaan on business_aktivitas_perusahaan.perusahaan_id = FT_TBL.id
+    left join business_alamat_telepon_perusahaan on business_alamat_telepon_perusahaan.perusahaan_id = FT_TBL.id
+    left join area_provinsi on area_provinsi.id = FT_TBL.provinsi_id
+    left join area_kabupaten_kota on area_kabupaten_kota.id = FT_TBL.kabupaten_kota_id
+    left join area_kecamatan on area_kecamatan.id = FT_TBL.kecamatan_id
+    left join area_kelurahan_desa on area_kelurahan_desa.id = FT_TBL.kelurahan_desa_id
 
-        where area_provinsi.kode=@provinsi
-    ) as T
-    order by T.c desc    
+    where area_provinsi.kode=@provinsi
+) as T
+order by T.skor_kalo desc  
 	
 
 8. POST api/kegiatan/{{id_kegiatan}}/matching?action=skip
