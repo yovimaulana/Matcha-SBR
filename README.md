@@ -196,7 +196,7 @@
     insert into alokasi_petugas_matching (id_spool, id_kegiatan, id_user, islocked, is_matching)
     select data_spool.id_spool, data_spool.id_kegiatan, alokasi_petugas_matching.id_user, alokasi_petugas_matching.islocked, alokasi_petugas_matching.is_matching from data_spool 
     left join alokasi_petugas_matching on alokasi_petugas_matching.id_kegiatan = data_spool.id_kegiatan
-    where alokasi_petugas_matching.id_kegiatan is null and data_spool.id_kegiatan = {{id_kegiatan}}
+    where alokasi_petugas_matching.id_kegiatan is null and data_spool.idsbr is null and data_spool.id_kegiatan = {{id_kegiatan}}
 
     -- get alokasi petugas matching yang sudah pernah diset -> data['alokasi'] : ...
     select id_user, users.name, count(*) jumlah_alokasi from alokasi_petugas_matching 
