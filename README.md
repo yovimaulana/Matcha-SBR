@@ -202,7 +202,7 @@
     select id_user, users.name, count(*) jumlah_alokasi from alokasi_petugas_matching 
     left join users on users.id = alokasi_petugas_matching.id_user
     where id_kegiatan = {{id_kegiatan}} and alokasi_petugas_matching.id_user is not null
-    group by (id_user, name)
+    group by id_user, users.name          
 
     -- get summary alokasi petugas matching -> data['summary']: ....
     select id_kegiatan, count(case when id_user is not null then 1 end ) teralokasi, count(case when id_user is null then 1 end) belum_teralokasi, count(*) total_data_matching 
