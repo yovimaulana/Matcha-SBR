@@ -263,9 +263,9 @@
     -- query alokasi petugas: di looping sesuai dengan jumlah object pada array alokasi
     MERGE INTO alokasi_petugas_matching T
     USING (
-        select top {{jumlah_alokasi}} id_kegiatan from alokasi_petugas_matching where id_user is null and id_kegiatan = {{id_kegiatan}} order by newid()
+        select top {{jumlah_alokasi}} id_kegiatan, id_spool from alokasi_petugas_matching where id_user is null and id_kegiatan = {{id_kegiatan}} order by newid()
     ) S 
-        ON T.id_kegiatan = S.id_kegiatan
+        ON T.id_kegiatan = S.id_kegiatan and T.id_spool = S.id_spool
     WHEN MATCHED THEN
     UPDATE 
         SET T.id_user = {{id_user}}
