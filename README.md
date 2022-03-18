@@ -465,7 +465,7 @@ select top 25 * from
 order by T.skor_kalo desc  
 	
 
-8. POST api/kegiatan/{{id_kegiatan}}/matching?action=skip
+8. POST api/kegiatan/{{id_kegiatan}}/matching?action=skip -> ga dipake
 
     -- action: skip matching
     -- variabel yang dibutuhkan: id_alokasi
