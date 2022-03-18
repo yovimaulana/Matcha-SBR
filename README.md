@@ -190,7 +190,7 @@
     -- cek apakah semua data untuk matching di data_spool sudah dimasukan semua ke tabel alokasi_petugas_matching
     select count(*) spool_belum_dimasukan from data_spool 
     left join alokasi_petugas_matching on alokasi_petugas_matching.id_kegiatan = data_spool.id_kegiatan
-    where alokasi_petugas_matching.id_kegiatan is null and data_spool.id_kegiatan = {{id_kegiatan}}
+    where alokasi_petugas_matching.id_kegiatan is null and data_spool.idsbr is null and data_spool.id_kegiatan = {{id_kegiatan}}
 
     -- kalau hasil cek di atas ternyata menghasilkan spool_belum_dimasukan > 0, lakukan insert data spool yang belum ada di tabel alokasi_petugas_matching:
     insert into alokasi_petugas_matching (id_spool, id_kegiatan, id_user, islocked, is_matching)
