@@ -17,21 +17,71 @@ create table data_spool (
     id_kegiatan int not null,
     idsbr varchar(255) null,
     sumber_data varchar(255) null,
-    "negara" varchar(255) NULL, -- table business_perusahaan: negara_id --
-    "provinsi" varchar(255) NULL, -- table business_perusahaan: provinsi_id --    
-	"kabupaten_kota" varchar(255) NULL, -- table business_perusahaan: kabupaten_kota_id --
-    "kecamatan" varchar(255) NULL, -- table business_perusahaan: kecamatan_id --
-	"kelurahan_desa" varchar(255) NULL, -- table business_perusahaan : kelurahan_desa_id --
-    "nama_perusahaan" VARCHAR(255) NULL DEFAULT NULL , -- table business_perusahaan : nama --
-	"nama_komersial_perusahaan" VARCHAR(255) NULL DEFAULT NULL , -- table business_perusahaan : nama_komersial --    
-    "alamat" VARCHAR(max) NULL DEFAULT NULL , -- table business_perusahaan --
-    "nomor_kode_area" VARCHAR(255) NULL DEFAULT NULL , -- table business_perusahaan --
-	"kode_pos" VARCHAR(255) NULL DEFAULT NULL , -- table business_perusahaan --
-	"kodese" VARCHAR(255) NULL DEFAULT NULL , -- table business_perusahaan --
-	"latitude" VARCHAR(255) NULL DEFAULT NULL , -- table business_perusahaan --
-	"longitude" VARCHAR(255) NULL DEFAULT NULL , -- table business_perusahaan --
-    "blok_sensus" BIGINT NULL DEFAULT NULL, -- table business_perusahaan:  blok_sensus_id --		
-    "sls" BIGINT NULL DEFAULT NULL, -- table business_perusahaan : sls_id --
+    "alamat" VARCHAR(max) NULL DEFAULT NULL , -- ok
+    "aset" FLOAT NULL DEFAULT NULL,	-- ok 
+    -- "catatan" VARCHAR(max) NULL DEFAULT NULL, -- gadipake
+    "jam_buka" DATETIME2(7) NULL DEFAULT NULL, -- ok 
+	"jam_tutup" DATETIME2(7) NULL DEFAULT NULL, -- ok 
+    "jenis_kelamin_pengusaha" VARCHAR(255) NULL DEFAULT NULL , -- cek value: L atau P
+    "jumlah_kamar" INT NULL DEFAULT NULL, -- ok 
+    -- "kode" varchar(255) null, -- gadipake
+    "kode_pos" VARCHAR(255) NULL DEFAULT NULL , -- ok 
+	"kodese" VARCHAR(255) NULL DEFAULT NULL , -- ok 
+	"latitude" VARCHAR(255) NULL DEFAULT NULL , -- ok 
+	"longitude" VARCHAR(255) NULL DEFAULT NULL , -- ok 
+    "multi_national_status" VARCHAR(255) NULL DEFAULT NULL , -- cek value: SBR_MNE
+    "nama_perusahaan" VARCHAR(255) NULL DEFAULT NULL , -- ok table business_perusahaan : nama
+	"nama_komersial_perusahaan" VARCHAR(255) NULL DEFAULT NULL , -- ok table business_perusahaan : nama_komersial
+    "nomor_kode_area" VARCHAR(255) NULL DEFAULT NULL , -- ok
+    "npwp" VARCHAR(255) NULL DEFAULT NULL , -- ok
+    "pajak_tahun_pendaftarannpwp" INT NULL DEFAULT NULL, -- ok
+	"pajak_tahunspt" INT NULL DEFAULT NULL, -- ok
+	"pajak_tanggal_update" DATETIME2(7) NULL DEFAULT NULL, -- ok
+	"pendapatan_per_tahun" FLOAT NULL DEFAULT NULL, -- ok
+	"pengeluaran_per_tahun" FLOAT NULL DEFAULT NULL, -- ok
+    "nama_pengusaha_pemilik" VARCHAR(255) NULL DEFAULT NULL , -- ok table business_perusahaan : pengusaha_pemilik
+    "skala_usaha" VARCHAR(255) NULL DEFAULT NULL , -- cek value: SBR_MENENGAH, SBR_MENENGAH_TENTATIF, dst
+    "status_kepemilikan" VARCHAR(255) NULL DEFAULT NULL , -- cek value: SBR_PMDN
+    "tahun_beroperasi" INT NULL DEFAULT NULL, -- ok
+	"tahun_pendirian" INT NULL DEFAULT NULL, -- ok
+    "tahun_ref_aset" INT NULL DEFAULT NULL,  -- ok
+	"tahun_ref_kompensasi_asing" INT NULL DEFAULT NULL, -- ok
+	"tahun_ref_kompensasi_lokal" INT NULL DEFAULT NULL, -- ok
+	"tahun_ref_pendapatan" INT NULL DEFAULT NULL, -- ok
+	"tahun_ref_pengeluaran" INT NULL DEFAULT NULL, -- ok
+	"tahun_ref_skala_usaha" INT NULL DEFAULT NULL, -- ok
+	"tahun_ref_tenaga_kerja_asing" INT NULL DEFAULT NULL, -- ok
+	"tahun_ref_tenaga_kerja_lokal" INT NULL DEFAULT NULL, -- ok
+    "tanggal_lahir_pengusaha" DATETIME2(7) NULL DEFAULT NULL, -- ok
+    "total_kompensasi_asing_per_tahun" FLOAT NULL DEFAULT NULL, -- ok
+	"total_kompensasi_lokal_per_tahun" FLOAT NULL DEFAULT NULL, -- ok
+	"total_tenaga_kerja_asing_per_tahun" INT NULL DEFAULT NULL, -- ok
+	"total_tenaga_kerja_lokal_per_tahun" INT NULL DEFAULT NULL, -- ok
+    "unit_statistik" VARCHAR(255) NULL DEFAULT NULL , -- cek value: SBR_ENTERPRISE, SBR_ESTABLISHMENT, dst
+    "blok_sensus" VARCHAR(255) NULL DEFAULT NULL, -- cek value: table area_blok_sensus
+    -- "induk_id" bigint null, -- gadipake
+    -- "infrastruktur_id" bigint null, --gadipake
+    "jaringan_usaha" varchar(255) NULL DEFAULT NULL, -- cek value: table business_ref_jaringan_usaha (tunggal, kantor pusat, cabang, perwakilan, dll)
+	"jenis_badan_hukum_badan_usaha" varchar(255) NULL DEFAULT NULL, -- cek value: table business_ref_jenis_bhbu (pt, cv, firma, koperasi, yayasan, dll)
+    "kabupaten_kota" varchar(255) NULL, -- cek value: table area_kabupaten_kota
+    "kbji_pengusaha" varchar(255) NULL DEFAULT NULL, -- cek value: table business_ref_kbji
+    "kecamatan" varchar(255) NULL, -- cek value: table area_kecamatan
+    "kelurahan_desa" varchar(255) NULL, -- cek value: table area_kelurahan_desa
+    "kewarganegaraan_pengusaha" varchar(255) NULL DEFAULT NULL, -- cek value: table business_ref_negara
+    -- "metode_enumerasi_pilihan_id" bigint null, -- gadipake
+    "negara" varchar(255) NULL, -- cek value:  table business_ref_negara
+
+    "pajak_jeniswp" varchar(255) NULL DEFAULT NULL, -- cek value: table business_ref_pajak_jenis_wp
+	"pajak_skala_usaha" varchar(255) NULL DEFAULT NULL, -- cek value: table business_ref_pajak_skala_usaha
+	"pajak_statuswp" varchar(255) NULL DEFAULT NULL, -- cek value: table business_ref_pajak_status_wp
+    "provinsi" varchar(255) NULL, -- cek value: table area_provinsi    
+    "sektor_institusi" varchar(255) NULL DEFAULT NULL, -- cek value: table business_ref_sektor_institusi (korporasi finansial, non finansial, rumah tangga, LNPRT, luar negeri, Pemerintahan Umum)
+    -- "sls_id" bigint null, -- gadipake
+    "statusbumn" varchar(255) NULL DEFAULT NULL, -- cek value: table business_ref_status_bumn
+	"status_perusahaan" varchar(255) NULL DEFAULT NULL, -- cek value: table business_ref_status_perusahaan (aktif, dormant, tutup, alih usaha, dst)
+	-- "subject_matter_custodian" BIGINT NULL DEFAULT NULL, -- gadipake
+
+        
     "email_perusahaan" varchar(255) null, -- tabel business_alamat_email_perusahaan : email --
     "nomor_faksimili" varchar(255) null, -- tabel business_alamat_fax_perusahaan --    
     "nomor_ekstensi" varchar(255) null, -- tabel business_alamat_telepon_perusahaan --
@@ -40,23 +90,6 @@ create table data_spool (
     "email_kontak_perusahaan" varchar(255) null, -- tabel business_kontak_perusahaan : email --
     "nama_kontak_perusahaan" varchar(255) null, -- tabel business_kontak_perusahaan : nama --
     "nomor_telepon_kontak_perusahaan" varchar(255) null, -- tabel business_kontak_perusahaan : nomor_telepon --
-	"tahun_beroperasi" INT NULL DEFAULT NULL, -- table business_perusahaan --
-	"tahun_pendirian" INT NULL DEFAULT NULL, -- table business_perusahaan --
-    "multi_national_status" VARCHAR(255) NULL DEFAULT NULL , -- table business_perusahaan --
-    "skala_usaha" VARCHAR(255) NULL DEFAULT NULL , -- table business_perusahaan --	
-    "jam_buka" DATETIME2(7) NULL DEFAULT NULL, -- table business_perusahaan --
-	"jam_tutup" DATETIME2(7) NULL DEFAULT NULL, -- table business_perusahaan --
-    "jumlah_kamar" INT NULL DEFAULT NULL, -- table business_perusahaan --
-    "aset" FLOAT NULL DEFAULT NULL,	-- table business_perusahaan --	
-	"npwp" VARCHAR(255) NULL DEFAULT NULL , -- table business_perusahaan --
-	"pajak_tahun_pendaftarannpwp" INT NULL DEFAULT NULL, -- table business_perusahaan --
-	"pajak_tahunspt" INT NULL DEFAULT NULL, -- table business_perusahaan --
-	"pajak_tanggal_update" DATETIME2(7) NULL DEFAULT NULL, -- table business_perusahaan --
-	"pendapatan_per_tahun" FLOAT NULL DEFAULT NULL, -- table business_perusahaan --
-	"pengeluaran_per_tahun" FLOAT NULL DEFAULT NULL, -- table business_perusahaan --
-    "pajak_jeniswp" BIGINT NULL DEFAULT NULL, -- table business_perusahaan : pajak_jeniswp_id --
-	"pajak_skala_usaha" BIGINT NULL DEFAULT NULL, -- table business_perusahaan: pajak_skala_usaha_id --
-	"pajak_statuswp" BIGINT NULL DEFAULT NULL, -- table business_perusahaan : pajak_statuswp_id --
     "pemegang_saham" varchar(255) null, -- tabel business_pemegang_saham --
     "presentase_saham" FLOAT null, -- tabel business_pemegang_saham --
     "aktivitas_perusahaan" varchar(255) null, -- tabel business_aktivitas_perusahaan: aktivitas --
@@ -64,52 +97,6 @@ create table data_spool (
     "kbli_aktivitas" varchar(5) null, -- tabel business_aktivitas_perusahaan: kbli --
     "kbki_produk_perusahaan" varchar(10) null, -- tabel business_produk_perusahaan : kbki --
     "produk_perusahaan" varchar(255) null, -- tabel business_produk_perusahaan : produk --    
-    "nama_pengusaha_pemilik" VARCHAR(255) NULL DEFAULT NULL , -- table business_perusahaan : pengusaha_pemilik --
-    "tanggal_lahir_pengusaha" DATETIME2(7) NULL DEFAULT NULL, -- table business_perusahaan --
-	"jenis_kelamin_pengusaha" VARCHAR(255) NULL DEFAULT NULL , -- table business_perusahaan --
-    "status_kepemilikan" VARCHAR(255) NULL DEFAULT NULL , -- table business_perusahaan --
-	"kewarganegaraan_pengusaha" BIGINT NULL DEFAULT NULL, -- table business_perusahaan: kewarganegaraan_pengusaha_id --
-    "kbji_pengusaha" BIGINT NULL DEFAULT NULL, -- table business_perusahaan: kbji_pengusaha_id --
-	"jaringan_usaha" BIGINT NULL DEFAULT NULL, -- table business_perusahaan: jaringan_usaha_id --
-	"jenis_badan_hukum_badan_usaha" BIGINT NULL DEFAULT NULL, -- table business_perusahaan: jenis_badan_hukum_badan_usaha_id --
-	"sektor_institusi" BIGINT NULL DEFAULT NULL, -- table business_perusahaan : sektor_institusi_id --
-    "statusbumn" BIGINT NULL DEFAULT NULL, -- table business_perusahaan: statusbumn_id --
-	"status_perusahaan" BIGINT NULL DEFAULT NULL, -- table business_perusahaan : status_perusahaan_id --
-	"subject_matter_custodian" BIGINT NULL DEFAULT NULL, -- table business_perusahaan: subject_matter_custodian_id --	
-    "tahun_ref_aset" INT NULL DEFAULT NULL,  -- table business_perusahaan --
-	"tahun_ref_kompensasi_asing" INT NULL DEFAULT NULL, -- table business_perusahaan --
-	"tahun_ref_kompensasi_lokal" INT NULL DEFAULT NULL, -- table business_perusahaan --
-	"tahun_ref_pendapatan" INT NULL DEFAULT NULL, -- table business_perusahaan --
-	"tahun_ref_pengeluaran" INT NULL DEFAULT NULL, -- table business_perusahaan --
-	"tahun_ref_skala_usaha" INT NULL DEFAULT NULL, -- table business_perusahaan --
-	"tahun_ref_tenaga_kerja_asing" INT NULL DEFAULT NULL, -- table business_perusahaan --
-	"tahun_ref_tenaga_kerja_lokal" INT NULL DEFAULT NULL, -- table business_perusahaan --	
-	"total_kompensasi_asing_per_tahun" FLOAT NULL DEFAULT NULL, -- table business_perusahaan --
-	"total_kompensasi_lokal_per_tahun" FLOAT NULL DEFAULT NULL, -- table business_perusahaan --
-	"total_tenaga_kerja_asing_per_tahun" INT NULL DEFAULT NULL, -- table business_perusahaan --
-	"total_tenaga_kerja_lokal_per_tahun" INT NULL DEFAULT NULL, -- table business_perusahaan --
-    "unit_statistik" VARCHAR(255) NULL DEFAULT NULL , -- table business_perusahaan --
-
-
-    -- belum beres masih harus ditambah kolom yang ada di tabel: --
-    /*
-    1. business_perusahaan_export -> ga dipake
-    2. business_perusahaan_hubungan_khusus -> ga dipake
-    3. business_perusahaan_sumber_map -> ga dipake    
-    16. business_ref_status_perusahaan -> ga dipake
-
-    4. business_pemegang_saham (v)
-    5. business_aktivitas_perusahaan (v)
-    6. business_alamat_email_perusahaan (v)
-    7. business_alamat_fax_perusahaan (v)
-    9. business_alamat_telepon_perusahaan (v)
-    10. business_alamat_web_perusahaan (v)
-    11. business_kontak_perusahaan (v)
-    15. business_produk_perusahaan (v)
-
-    8. business_alamat_perusahaan -> ragu
-    */
-
 );
 
 
