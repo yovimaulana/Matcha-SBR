@@ -255,7 +255,7 @@ create table matcha_assessment_results (
     total_kompensasi_lokal_per_tahun float null, 
     total_tenaga_kerja_asing_per_tahun int null,
     total_tenaga_kerja_lokal_per_tahun int null,
-    unit_statistik varchar(255) null
+    unit_statistik varchar(255) null,
     jaringan_usaha_id int null,
     jenis_badan_hukum_badan_usaha_id int null,
     kabupaten_kota_id int null,
