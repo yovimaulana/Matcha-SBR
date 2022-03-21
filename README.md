@@ -714,15 +714,17 @@ order by T.skor_kalo desc
     -- description: mendapatkan daftar alokasi petugas assessment
 
     -- cek apakah semua data untuk matching assessment sudah dimasukan semua ke tabel alokasi_petugas_assessment
-    select count(*) data_belum_dimasukan from (
-        select distinct idsbr from (
-            select idsbr from data_spool where id_kegiatan = {{id_kegiatan}} and idsbr is not null
-            union
-            select idsbr from matching_results where id_kegiatan = {{id_kegiatan}} and (is_newsbr is null or is_newsbr = 0)
-        )
-    ) a 
-    left join alokasi_petugas_assessment on alokasi_petugas_assessment.idsbr = a.idsbr
-    where alokasi_petugas_assessment.idsbr is null and alokasi_petugas_assessment.id_kegiatan = {{id_kegiatan}}
+    SELECT COUNT(a.idsbr) data_belum_dimasukan from (
+    select distinct idsbr, id_kegiatan from (
+        select idsbr, id_kegiatan from matcha_data_spool where id_kegiatan = 2 and idsbr is not null
+        union
+        select idsbr, id_kegiatan from matcha_matching_results where id_kegiatan = 2 and (is_newsbr is null or is_newsbr = 0)
+    ) b
+) a
+left join matcha_alokasi_petugas_assessment on matcha_alokasi_petugas_assessment.idsbr = a.idsbr 
+AND matcha_alokasi_petugas_assessment.id_kegiatan = a.id_kegiatan
+where matcha_alokasi_petugas_assessment.idsbr is NULL
+AND a.id_kegiatan = 2
 
 
     -- kalau hasil cek di atas ternyata menghasilkan data_belum_dimasukan > 0, lakukan insert data yang belum ada di tabel alokasi_petugas_assessment:
