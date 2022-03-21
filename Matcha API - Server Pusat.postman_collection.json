@@ -1,0 +1,2260 @@
+{
+	"info": {
+		"_postman_id": "518b1301-1958-45ba-98ef-0693ec9740cf",
+		"name": "Matcha API - Server Pusat",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://webapps.bps.go.id/pengolahansbr/matcha-backend/api/users",
+					"protocol": "https",
+					"host": [
+						"webapps",
+						"bps",
+						"go",
+						"id"
+					],
+					"path": [
+						"pengolahansbr",
+						"matcha-backend",
+						"api",
+						"users"
+					]
+				},
+				"description": "Retrieve data user. Parameter optional yang digunakan:\n\n*   role -> jika terisi, get user berdasarkan role (value: user, admin, dst)\n*   iduser -> jika terisi, get user berdasarkan id user\n    \n\nJika parameter role dan iduser tidak terisi (kosong) -> get all user"
+			},
+			"response": [
+				{
+					"name": "get all user",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/matcha-backend/api/users",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"matcha-backend",
+								"api",
+								"users"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 17 Mar 2022 06:56:44 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.33 (Win32) OpenSSL/1.0.2o PHP/5.6.36"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/5.6.36"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "Content-Length",
+							"value": "560"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"meta\": {\n        \"code\": 200,\n        \"status\": \"success\",\n        \"message\": \"Data user berhasil diambil\"\n    },\n    \"data\": [\n        {\n            \"id\": \"1\",\n            \"username\": \"yovi.maulana\",\n            \"password\": null,\n            \"name\": \"Yovi MN\",\n            \"email\": null,\n            \"nip\": null,\n            \"photo\": null,\n            \"role\": \"USER\"\n        },\n        {\n            \"id\": \"2\",\n            \"username\": \"admin\",\n            \"password\": null,\n            \"name\": \"Administrator\",\n            \"email\": null,\n            \"nip\": null,\n            \"photo\": null,\n            \"role\": \"ADMIN\"\n        },\n        {\n            \"id\": \"3\",\n            \"username\": \"imam\",\n            \"password\": null,\n            \"name\": \"Imam S\",\n            \"email\": null,\n            \"nip\": null,\n            \"photo\": null,\n            \"role\": \"USER\"\n        },\n        {\n            \"id\": \"4\",\n            \"username\": \"jhonatan\",\n            \"password\": null,\n            \"name\": \"Jhonatan\",\n            \"email\": null,\n            \"nip\": null,\n            \"photo\": null,\n            \"role\": \"USER\"\n        }\n    ]\n}"
+				},
+				{
+					"name": "get all user with certain role",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/matcha-backend/api/users?role=user",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"matcha-backend",
+								"api",
+								"users"
+							],
+							"query": [
+								{
+									"key": "role",
+									"value": "user"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 17 Mar 2022 06:57:34 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.33 (Win32) OpenSSL/1.0.2o PHP/5.6.36"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/5.6.36"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Content-Length",
+							"value": "439"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"meta\": {\n        \"code\": 200,\n        \"status\": \"success\",\n        \"message\": \"Data user berhasil diambil\"\n    },\n    \"data\": [\n        {\n            \"id\": \"1\",\n            \"username\": \"yovi.maulana\",\n            \"password\": null,\n            \"name\": \"Yovi MN\",\n            \"email\": null,\n            \"nip\": null,\n            \"photo\": null,\n            \"role\": \"USER\"\n        },\n        {\n            \"id\": \"3\",\n            \"username\": \"imam\",\n            \"password\": null,\n            \"name\": \"Imam S\",\n            \"email\": null,\n            \"nip\": null,\n            \"photo\": null,\n            \"role\": \"USER\"\n        },\n        {\n            \"id\": \"4\",\n            \"username\": \"jhonatan\",\n            \"password\": null,\n            \"name\": \"Jhonatan\",\n            \"email\": null,\n            \"nip\": null,\n            \"photo\": null,\n            \"role\": \"USER\"\n        }\n    ]\n}"
+				},
+				{
+					"name": "get specific user",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/matcha-backend/api/user?iduser=1",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"matcha-backend",
+								"api",
+								"user"
+							],
+							"query": [
+								{
+									"key": "iduser",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 17 Mar 2022 07:04:03 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.33 (Win32) OpenSSL/1.0.2o PHP/5.6.36"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/5.6.36"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "Content-Length",
+							"value": "209"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"meta\": {\n        \"code\": 200,\n        \"status\": \"success\",\n        \"message\": \"Data user berhasil diambil\"\n    },\n    \"data\": [\n        {\n            \"id\": \"1\",\n            \"username\": \"yovi.maulana\",\n            \"password\": null,\n            \"name\": \"Yovi MN\",\n            \"email\": null,\n            \"nip\": null,\n            \"photo\": null,\n            \"role\": \"USER\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "users",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 1,\r\n    \"username\": \"yovi.maulana\",\r\n    \"password\": null,\r\n    \"name\": \"Yovi MN\",\r\n    \"email\": null,\r\n    \"nip\": null,\r\n    \"photo\": null,\r\n    \"role\": \"USER\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://webapps.bps.go.id/pengolahansbr/matcha-backend/api/users",
+					"protocol": "https",
+					"host": [
+						"webapps",
+						"bps",
+						"go",
+						"id"
+					],
+					"path": [
+						"pengolahansbr",
+						"matcha-backend",
+						"api",
+						"users"
+					]
+				},
+				"description": "Update data user"
+			},
+			"response": [
+				{
+					"name": "update data user",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"username\": \"yovi.maulana\",\r\n    \"password\": null,\r\n    \"name\": \"Yovi MN\",\r\n    \"email\": null,\r\n    \"nip\": null,\r\n    \"photo\": null,\r\n    \"role\": \"USER\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost/matcha-backend/api/users",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"matcha-backend",
+								"api",
+								"users"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 17 Mar 2022 03:56:05 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.33 (Win32) OpenSSL/1.0.2o PHP/5.6.36"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/5.6.36"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Content-Length",
+							"value": "208"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"meta\": {\n        \"code\": 200,\n        \"status\": \"success\",\n        \"message\": \"Data user berhasil diperbarui\"\n    },\n    \"data\": {\n        \"id\": 1,\n        \"username\": \"yovi.maulana\",\n        \"password\": null,\n        \"name\": \"Yovi MN\",\n        \"email\": null,\n        \"nip\": null,\n        \"photo\": null,\n        \"role\": \"USER\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "users",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{    \r\n    \"username\": \"ratih\",\r\n    \"password\": null,\r\n    \"name\": \"Ratih Nirahana\",\r\n    \"email\": null,\r\n    \"nip\": null,\r\n    \"photo\": null,\r\n    \"role\": \"USER\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://webapps.bps.go.id/pengolahansbr/matcha-backend/api/users",
+					"protocol": "https",
+					"host": [
+						"webapps",
+						"bps",
+						"go",
+						"id"
+					],
+					"path": [
+						"pengolahansbr",
+						"matcha-backend",
+						"api",
+						"users"
+					]
+				},
+				"description": "Menambahkan user baru ke database"
+			},
+			"response": [
+				{
+					"name": "insert new user",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{    \r\n    \"username\": \"ratih\",\r\n    \"password\": null,\r\n    \"name\": \"Ratih Nirahana\",\r\n    \"email\": null,\r\n    \"nip\": null,\r\n    \"photo\": null,\r\n    \"role\": \"USER\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost/matcha-backend/api/users",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"matcha-backend",
+								"api",
+								"users"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 17 Mar 2022 04:02:56 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.33 (Win32) OpenSSL/1.0.2o PHP/5.6.36"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/5.6.36"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Content-Length",
+							"value": "211"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"meta\": {\n        \"code\": 200,\n        \"status\": \"success\",\n        \"message\": \"Data user berhasil ditambahkan\"\n    },\n    \"data\": {\n        \"id\": \"7\",\n        \"username\": \"ratih\",\n        \"password\": null,\n        \"name\": \"Ratih Nirahana\",\n        \"email\": null,\n        \"nip\": null,\n        \"photo\": null,\n        \"role\": \"USER\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "users",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user\": 7\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://webapps.bps.go.id/pengolahansbr/matcha-backend/api/users",
+					"protocol": "https",
+					"host": [
+						"webapps",
+						"bps",
+						"go",
+						"id"
+					],
+					"path": [
+						"pengolahansbr",
+						"matcha-backend",
+						"api",
+						"users"
+					]
+				},
+				"description": "Delete / Hapus data user"
+			},
+			"response": [
+				{
+					"name": "delete user",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user\": 7\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost/matcha-backend/api/user",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"matcha-backend",
+								"api",
+								"user"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 17 Mar 2022 04:03:14 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.33 (Win32) OpenSSL/1.0.2o PHP/5.6.36"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/5.6.36"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "Content-Length",
+							"value": "91"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=99"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"meta\": {\n        \"code\": 200,\n        \"status\": \"success\",\n        \"message\": \"Data user berhasil dihapus\"\n    },\n    \"data\": null\n}"
+				}
+			]
+		},
+		{
+			"name": "kegiatan",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://webapps.bps.go.id/pengolahansbr/matcha-backend/api/kegiatan",
+					"protocol": "https",
+					"host": [
+						"webapps",
+						"bps",
+						"go",
+						"id"
+					],
+					"path": [
+						"pengolahansbr",
+						"matcha-backend",
+						"api",
+						"kegiatan"
+					]
+				},
+				"description": "Retrieve data kegiatan. Parameter optional:\n\n*   type -> jika terisi, get kegiatan berdasarkan type (value: matching, assessment)\n*   status -> jika terisi, get kegiatan berdasarkan status (value: inactive, active, done)\n    \n\nJika parameter type & status nya kosong (tidak terisi) -> get all kegiatan"
+			},
+			"response": [
+				{
+					"name": "get kegiatan with specific type & status",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/matcha-backend/api/kegiatan?type=matching&status=active",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"matcha-backend",
+								"api",
+								"kegiatan"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "matching"
+								},
+								{
+									"key": "status",
+									"value": "active"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 17 Mar 2022 04:58:13 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.33 (Win32) OpenSSL/1.0.2o PHP/5.6.36"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/5.6.36"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Content-Length",
+							"value": "234"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"meta\": {\n        \"code\": 200,\n        \"status\": \"success\",\n        \"message\": \"Data kegiatan berhasil diambil\"\n    },\n    \"data\": [\n        {\n            \"id_kegiatan\": \"2\",\n            \"name\": \"Kegiatan 2\",\n            \"description\": null,\n            \"matching_active\": \"1\",\n            \"assessment_active\": null,\n            \"created_at\": null,\n            \"updated_at\": null\n        }\n    ]\n}"
+				},
+				{
+					"name": "get kegiatan with certain status",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/matcha-backend/api/kegiatan?status=active",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"matcha-backend",
+								"api",
+								"kegiatan"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "active"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 17 Mar 2022 06:59:45 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.33 (Win32) OpenSSL/1.0.2o PHP/5.6.36"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/5.6.36"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Content-Length",
+							"value": "440"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"meta\": {\n        \"code\": 200,\n        \"status\": \"success\",\n        \"message\": \"Data kegiatan berhasil diambil\"\n    },\n    \"data\": [\n        {\n            \"id_kegiatan\": \"2\",\n            \"name\": \"Kegiatan 2\",\n            \"description\": null,\n            \"matching_active\": \"1\",\n            \"assessment_active\": null,\n            \"created_at\": null,\n            \"updated_at\": null\n        },\n        {\n            \"id_kegiatan\": \"3\",\n            \"name\": \"Kegiatan dll\",\n            \"description\": \"Deskripsi Kegiatan ...\",\n            \"matching_active\": \"1\",\n            \"assessment_active\": null,\n            \"created_at\": \"2022-03-17 06:06:51.000\",\n            \"updated_at\": \"2022-03-17 06:55:49.000\"\n        }\n    ]\n}"
+				},
+				{
+					"name": "get all kegiatan",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/matcha-backend/api/kegiatan",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"matcha-backend",
+								"api",
+								"kegiatan"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 17 Mar 2022 07:00:14 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.33 (Win32) OpenSSL/1.0.2o PHP/5.6.36"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/5.6.36"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "Content-Length",
+							"value": "583"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"meta\": {\n        \"code\": 200,\n        \"status\": \"success\",\n        \"message\": \"Data kegiatan berhasil diambil\"\n    },\n    \"data\": [\n        {\n            \"id_kegiatan\": \"1\",\n            \"name\": \"Kegiatan 1\",\n            \"description\": null,\n            \"matching_active\": null,\n            \"assessment_active\": null,\n            \"created_at\": null,\n            \"updated_at\": null\n        },\n        {\n            \"id_kegiatan\": \"2\",\n            \"name\": \"Kegiatan 2\",\n            \"description\": null,\n            \"matching_active\": \"1\",\n            \"assessment_active\": null,\n            \"created_at\": null,\n            \"updated_at\": null\n        },\n        {\n            \"id_kegiatan\": \"3\",\n            \"name\": \"Kegiatan dll\",\n            \"description\": \"Deskripsi Kegiatan ...\",\n            \"matching_active\": \"1\",\n            \"assessment_active\": null,\n            \"created_at\": \"2022-03-17 06:06:51.000\",\n            \"updated_at\": \"2022-03-17 06:55:49.000\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "kegiatan",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{    \r\n    \"name\": \"Kegiatan dll\",\r\n    \"description\": \"asdf\"    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://webapps.bps.go.id/pengolahansbr/matcha-backend/api/kegiatan",
+					"protocol": "https",
+					"host": [
+						"webapps",
+						"bps",
+						"go",
+						"id"
+					],
+					"path": [
+						"pengolahansbr",
+						"matcha-backend",
+						"api",
+						"kegiatan"
+					]
+				},
+				"description": "Insert data kegiatan baru"
+			},
+			"response": [
+				{
+					"name": "insert new kegiatan",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{    \r\n    \"name\": \"Kegiatan dll\",\r\n    \"description\": \"asdf\"    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost/matcha-backend/api/kegiatan",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"matcha-backend",
+								"api",
+								"kegiatan"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 17 Mar 2022 06:06:50 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.33 (Win32) OpenSSL/1.0.2o PHP/5.6.36"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/5.6.36"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Content-Length",
+							"value": "262"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"meta\": {\n        \"code\": 200,\n        \"status\": \"success\",\n        \"message\": \"Data kegiatan berhasil ditambahkan\"\n    },\n    \"data\": {\n        \"id_kegiatan\": \"3\",\n        \"name\": \"Kegiatan dll\",\n        \"description\": \"asdf\",\n        \"matching_active\": null,\n        \"assessment_active\": null,\n        \"created_at\": \"2022-03-17 06:06:51.000\",\n        \"updated_at\": null\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "kegiatan",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id_kegiatan\": \"3\",\r\n    \"name\": \"Kegiatan dll\",\r\n    \"description\": \"asdf\",\r\n    \"matching_active\": null,\r\n    \"assessment_active\": 1    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://webapps.bps.go.id/pengolahansbr/matcha-backend/api/kegiatan",
+					"protocol": "https",
+					"host": [
+						"webapps",
+						"bps",
+						"go",
+						"id"
+					],
+					"path": [
+						"pengolahansbr",
+						"matcha-backend",
+						"api",
+						"kegiatan"
+					]
+				},
+				"description": "Update data kegiatan"
+			},
+			"response": [
+				{
+					"name": "update data kegiatan (error)",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id_kegiatan\": \"3\",\r\n    \"name\": \"Kegiatan dll\",\r\n    \"description\": \"asdf\",\r\n    \"matching_active\": null,\r\n    \"assessment_active\": 1    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost/matcha-backend/api/kegiatan",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"matcha-backend",
+								"api",
+								"kegiatan"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 17 Mar 2022 06:54:35 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.33 (Win32) OpenSSL/1.0.2o PHP/5.6.36"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/5.6.36"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Content-Length",
+							"value": "180"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"meta\": {\n        \"code\": 404,\n        \"status\": \"error\",\n        \"message\": \"Data kegiatan gagal diperbarui\"\n    },\n    \"data\": {\n        \"error_message\": \"Jika matching_active = null atau 1, maka assessment_active harus = null\"\n    }\n}"
+				},
+				{
+					"name": "update data kegiatan (success)",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id_kegiatan\": \"3\",\r\n    \"name\": \"Kegiatan dll\",\r\n    \"description\": \"Deskripsi Kegiatan ...\",\r\n    \"matching_active\": 1,\r\n    \"assessment_active\": null   \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost/matcha-backend/api/kegiatan",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"matcha-backend",
+								"api",
+								"kegiatan"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 17 Mar 2022 06:55:49 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.33 (Win32) OpenSSL/1.0.2o PHP/5.6.36"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/5.6.36"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Content-Length",
+							"value": "299"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"meta\": {\n        \"code\": 200,\n        \"status\": \"success\",\n        \"message\": \"Data kegiatan berhasil diperbarui\"\n    },\n    \"data\": {\n        \"id_kegiatan\": \"3\",\n        \"name\": \"Kegiatan dll\",\n        \"description\": \"Deskripsi Kegiatan ...\",\n        \"matching_active\": \"1\",\n        \"assessment_active\": null,\n        \"created_at\": \"2022-03-17 06:06:51.000\",\n        \"updated_at\": \"2022-03-17 06:55:49.000\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "kegiatan",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"kegiatan\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://webapps.bps.go.id/pengolahansbr/matcha-backend/api/kegiatan",
+					"protocol": "https",
+					"host": [
+						"webapps",
+						"bps",
+						"go",
+						"id"
+					],
+					"path": [
+						"pengolahansbr",
+						"matcha-backend",
+						"api",
+						"kegiatan"
+					]
+				},
+				"description": "Menghapus data kegiatan"
+			},
+			"response": [
+				{
+					"name": "delete kegiatan",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"kegiatan\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/matcha-backend/api/kegiatan",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"matcha-backend",
+								"api",
+								"kegiatan"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 17 Mar 2022 08:09:01 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.33 (Win32) OpenSSL/1.0.2o PHP/5.6.36"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/5.6.36"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "Content-Length",
+							"value": "95"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"meta\": {\n        \"code\": 200,\n        \"status\": \"success\",\n        \"message\": \"Data kegiatan berhasil dihapus\"\n    },\n    \"data\": null\n}"
+				}
+			]
+		},
+		{
+			"name": "Alokasi Matching",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://webapps.bps.go.id/pengolahansbr/matcha-backend/api/kegiatan/2/matching/alokasi",
+					"protocol": "https",
+					"host": [
+						"webapps",
+						"bps",
+						"go",
+						"id"
+					],
+					"path": [
+						"pengolahansbr",
+						"matcha-backend",
+						"api",
+						"kegiatan",
+						"2",
+						"matching",
+						"alokasi"
+					]
+				},
+				"description": "Mendapatkan data alokasi matching\n\nhttps://webapps.bps.go.id/pengolahansbr/matcha-backend/api/kegiatan/{{id_kegiatan}}/matching/alokasi"
+			},
+			"response": [
+				{
+					"name": "Get Alokasi Matching - 1 (Empty)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/matcha-backend/api/kegiatan/2/matching/alokasi",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"matcha-backend",
+								"api",
+								"kegiatan",
+								"2",
+								"matching",
+								"alokasi"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 18 Mar 2022 04:18:50 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.33 (Win32) OpenSSL/1.0.2o PHP/5.6.36"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/5.6.36"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Content-Length",
+							"value": "225"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"meta\": {\n        \"code\": 200,\n        \"status\": \"success\",\n        \"message\": \"Data alokasi petugas matching berhasil diambil\"\n    },\n    \"data\": {\n        \"summary\": {\n            \"id_kegiatan\": \"2\",\n            \"teralokasi\": \"0\",\n            \"belum_teralokasi\": \"19385\",\n            \"total_data_matching\": \"19385\"\n        },\n        \"alokasi\": []\n    }\n}"
+				},
+				{
+					"name": "Get Alokasi Matching - 2",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/matcha-backend/api/kegiatan/2/matching/alokasi",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"matcha-backend",
+								"api",
+								"kegiatan",
+								"2",
+								"matching",
+								"alokasi"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 18 Mar 2022 04:21:19 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.33 (Win32) OpenSSL/1.0.2o PHP/5.6.36"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/5.6.36"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "60"
+						},
+						{
+							"key": "Content-Length",
+							"value": "338"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"meta\": {\n        \"code\": 200,\n        \"status\": \"success\",\n        \"message\": \"Data alokasi petugas matching berhasil diambil\"\n    },\n    \"data\": {\n        \"summary\": {\n            \"id_kegiatan\": \"2\",\n            \"teralokasi\": \"3\",\n            \"belum_teralokasi\": \"19382\",\n            \"total_data_matching\": \"19385\"\n        },\n        \"alokasi\": [\n            {\n                \"id_user\": \"2\",\n                \"name\": \"Administrator\",\n                \"jumlah_alokasi\": \"1\"\n            },\n            {\n                \"id_user\": \"1\",\n                \"name\": \"Yovi MN\",\n                \"jumlah_alokasi\": \"2\"\n            }\n        ]\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Insert / Update Alokasi Matching",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id_kegiatan\": 2,\r\n    \"alokasi\": [\r\n        {\r\n            \"id_user\": 1,\r\n            \"jumlah_alokasi\": 30\r\n        },\r\n        {\r\n            \"id_user\": 2,\r\n            \"jumlah_alokasi\": 50\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://webapps.bps.go.id/pengolahansbr/matcha-backend/api/kegiatan/2/matching/alokasi",
+					"protocol": "https",
+					"host": [
+						"webapps",
+						"bps",
+						"go",
+						"id"
+					],
+					"path": [
+						"pengolahansbr",
+						"matcha-backend",
+						"api",
+						"kegiatan",
+						"2",
+						"matching",
+						"alokasi"
+					]
+				},
+				"description": "Memasukan dan atau memperbarui data alokasi matching\n\nhttps://webapps.bps.go.id/pengolahansbr/matcha-backend/api/kegiatan/{{id_kegiatan}}/matching/alokasi"
+			},
+			"response": [
+				{
+					"name": "Insert / Update Alokasi Matching",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id_kegiatan\": 2,\r\n    \"alokasi\": [\r\n        {\r\n            \"id_user\": 1,\r\n            \"jumlah_alokasi\": 50\r\n        },\r\n        {\r\n            \"id_user\": 2,\r\n            \"jumlah_alokasi\": 50\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost/matcha-backend/api/kegiatan/2/matching/alokasi",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"matcha-backend",
+								"api",
+								"kegiatan",
+								"2",
+								"matching",
+								"alokasi"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 18 Mar 2022 04:43:03 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.33 (Win32) OpenSSL/1.0.2o PHP/5.6.36"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/5.6.36"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "Content-Length",
+							"value": "199"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"meta\": {\n        \"code\": 200,\n        \"status\": \"success\",\n        \"message\": \"Berhasil melakukan alokasi petugas matching\"\n    },\n    \"data\": {\n        \"id_kegiatan\": \"2\",\n        \"teralokasi\": \"293\",\n        \"belum_teralokasi\": \"19092\",\n        \"total_data_matching\": \"19385\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Data matching",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://webapps.bps.go.id/pengolahansbr/matcha-backend/api/kegiatan/2/matching/2",
+					"protocol": "https",
+					"host": [
+						"webapps",
+						"bps",
+						"go",
+						"id"
+					],
+					"path": [
+						"pengolahansbr",
+						"matcha-backend",
+						"api",
+						"kegiatan",
+						"2",
+						"matching",
+						"2"
+					]
+				},
+				"description": "Mendapatkan data untuk proses matching\n\nhttps://webapps.bps.go.id/pengolahansbr/matcha-backend/api/kegiatan/{{id_kegiatan}}/matching/{{id_user}}"
+			},
+			"response": [
+				{
+					"name": "Get data matching",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/matcha-backend/api/kegiatan/2/matching/2",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"matcha-backend",
+								"api",
+								"kegiatan",
+								"2",
+								"matching",
+								"2"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 18 Mar 2022 08:03:01 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.33 (Win32) OpenSSL/1.0.2o PHP/5.6.36"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/5.6.36"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"meta\": {\n        \"code\": 200,\n        \"status\": \"success\",\n        \"message\": \"data berhasil diambil\"\n    },\n    \"data\": {\n        \"summary\": {\n            \"id_kegiatan\": \"2\",\n            \"sudah_matching\": \"0\",\n            \"belum_matching\": \"151\",\n            \"total_data_matching\": \"151\"\n        },\n        \"spool\": {\n            \"id_alokasi\": \"92323\",\n            \"id_spool\": \"40762\",\n            \"nama_perusahaan\": \"POJOK BUSANA <TAUFIK>\",\n            \"alamat\": \"JALAN PEMUDA CITY MALL LANTAI I RT:  RW:  KODEPOS: 73516\",\n            \"provinsi\": \"62\",\n            \"kabupaten_kota\": \"03\",\n            \"kecamatan\": \"040\",\n            \"kelurahan_desa\": \"014\",\n            \"nomor_telepon\": \"085870128886\",\n            \"aktivitas_perusahaan\": \"PERDAGANGAN RETAIL PAKAIAN JADI\",\n            \"kbli_aktivitas\": \"47711\"\n        },\n        \"matching\": [\n            {\n                \"id_perusahaan\": \"543739\",\n                \"idsbr\": \"97280800\",\n                \"nama_perusahaan\": \"POJOK BUSANA TAUFIK\",\n                \"nama_komersial\": \"\",\n                \"alamat\": \"JALAN PEMUDA CITY MALL LANTAI I\",\n                \"skor_matching\": \"492.0\",\n                \"rank_nama\": \"142\",\n                \"rank_alamat\": \"44\",\n                \"skor_kalo\": \"492.0\",\n                \"kode_pos\": \"73516\",\n                \"nomor_telepon\": null,\n                \"aktivitas_perusahaan\": \"PERDAGANGAN RETAIL PAKAIAN JADI \",\n                \"kbli_aktivitas\": \"47711\",\n                \"provinsi_id\": \"57\",\n                \"nama_provinsi\": \"KALIMANTAN TENGAH\",\n                \"kode_provinsi\": \"62\",\n                \"kabupaten_kota_id\": \"902\",\n                \"nama_kabupaten_kota\": \"KAPUAS                                            \",\n                \"kode_kabupaten_kota\": \"03\",\n                \"kecamatan_id\": \"13660\",\n                \"nama_kecamatan\": \"SELAT                                             \",\n                \"kode_kecamatan\": \"040\",\n                \"kelurahan_desa_id\": \"101934\",\n                \"nama_kelurahan_desa\": \"SELAT DALAM                                       \",\n                \"kode_kelurahan_desa\": \"014\"\n            },\n            {\n                \"id_perusahaan\": \"579708\",\n                \"idsbr\": \"97273599\",\n                \"nama_perusahaan\": \"POJOK BUSANA\",\n                \"nama_komersial\": \"\",\n                \"alamat\": \"BORNEO MALL JI ISKANDAR\",\n                \"skor_matching\": \"177.0\",\n                \"rank_nama\": \"59\",\n                \"rank_alamat\": null,\n                \"skor_kalo\": \"118.0\",\n                \"kode_pos\": \"74112\",\n                \"nomor_telepon\": null,\n                \"aktivitas_perusahaan\": \"PERDAGANGAN RETAIL PAKAIAN JADI\",\n                \"kbli_aktivitas\": \"47711\",\n                \"provinsi_id\": \"57\",\n                \"nama_provinsi\": \"KALIMANTAN TENGAH\",\n                \"kode_provinsi\": \"62\",\n                \"kabupaten_kota_id\": \"900\",\n                \"nama_kabupaten_kota\": \"KOTAWARINGIN BARAT                                \",\n                \"kode_kabupaten_kota\": \"01\",\n                \"kecamatan_id\": \"13635\",\n                \"nama_kecamatan\": \"ARUT SELATAN                                      \",\n                \"kode_kecamatan\": \"050\",\n                \"kelurahan_desa_id\": \"101646\",\n                \"nama_kelurahan_desa\": \"MADUREJO                                          \",\n                \"kode_kelurahan_desa\": \"009\"\n            },\n            {\n                \"id_perusahaan\": \"584197\",\n                \"idsbr\": \"97277197\",\n                \"nama_perusahaan\": \"POJOK BUSANA\",\n                \"nama_komersial\": \"\",\n                \"alamat\": \"JL.JENDRAL SUDIRMAN KM 1.5 BORNEO CITY\",\n                \"skor_matching\": \"177.0\",\n                \"rank_nama\": \"59\",\n                \"rank_alamat\": null,\n                \"skor_kalo\": \"118.0\",\n                \"kode_pos\": \"74322\",\n                \"nomor_telepon\": null,\n                \"aktivitas_perusahaan\": \"PERDAGANGAN RETAIL PAKAIAN JADI\",\n                \"kbli_aktivitas\": \"47111\",\n                \"provinsi_id\": \"57\",\n                \"nama_provinsi\": \"KALIMANTAN TENGAH\",\n                \"kode_provinsi\": \"62\",\n                \"kabupaten_kota_id\": \"901\",\n                \"nama_kabupaten_kota\": \"KOTAWARINGIN TIMUR                                \",\n                \"kode_kabupaten_kota\": \"02\",\n                \"kecamatan_id\": \"13643\",\n                \"nama_kecamatan\": \"MENTAWA BARU/KETAPANG                             \",\n                \"kode_kecamatan\": \"060\",\n                \"kelurahan_desa_id\": \"101748\",\n                \"nama_kelurahan_desa\": \"MENTAWA BARU HULU                                 \",\n                \"kode_kelurahan_desa\": \"005\"\n            },\n            {\n                \"id_perusahaan\": \"614786\",\n                \"idsbr\": \"97300097\",\n                \"nama_perusahaan\": \"POJOK BUSANA\",\n                \"nama_komersial\": \"\",\n                \"alamat\": \"JALAN YOS SUDARSO LANTAI 2 METOS\",\n                \"skor_matching\": \"177.0\",\n                \"rank_nama\": \"59\",\n                \"rank_alamat\": null,\n                \"skor_kalo\": \"118.0\",\n                \"kode_pos\": \"73111\",\n                \"nomor_telepon\": null,\n                \"aktivitas_perusahaan\": \"PEDAGANG ECERAN PAKAIAN DI DEPARTEMEN STORE\",\n                \"kbli_aktivitas\": \"47711\",\n                \"provinsi_id\": \"57\",\n                \"nama_provinsi\": \"KALIMANTAN TENGAH\",\n                \"kode_provinsi\": \"62\",\n                \"kabupaten_kota_id\": \"913\",\n                \"nama_kabupaten_kota\": \"PALANGKA RAYA                                     \",\n                \"kode_kabupaten_kota\": \"71\",\n                \"kecamatan_id\": \"13767\",\n                \"nama_kecamatan\": \"JEKAN RAYA                                        \",\n                \"kode_kecamatan\": \"012\",\n                \"kelurahan_desa_id\": \"103177\",\n                \"nama_kelurahan_desa\": \"MENTENG                                           \",\n                \"kode_kelurahan_desa\": \"001\"\n            },\n            {\n                \"id_perusahaan\": \"587634\",\n                \"idsbr\": \"97278364\",\n                \"nama_perusahaan\": \"TAUFIK MAKMUR, CV\",\n                \"nama_komersial\": \"\",\n                \"alamat\": \"JALAN BAAMANG TENGAH I NO. 3\",\n                \"skor_matching\": \"90.0\",\n                \"rank_nama\": \"30\",\n                \"rank_alamat\": null,\n                \"skor_kalo\": \"60.0\",\n                \"kode_pos\": \"74312\",\n                \"nomor_telepon\": null,\n                \"aktivitas_perusahaan\": \"-\",\n                \"kbli_aktivitas\": \"47302\",\n                \"provinsi_id\": \"57\",\n                \"nama_provinsi\": \"KALIMANTAN TENGAH\",\n                \"kode_provinsi\": \"62\",\n                \"kabupaten_kota_id\": \"901\",\n                \"nama_kabupaten_kota\": \"KOTAWARINGIN TIMUR                                \",\n                \"kode_kabupaten_kota\": \"02\",\n                \"kecamatan_id\": \"13648\",\n                \"nama_kecamatan\": \"BAAMANG                                           \",\n                \"kode_kecamatan\": \"120\",\n                \"kelurahan_desa_id\": \"101787\",\n                \"nama_kelurahan_desa\": \"BAAMANG TENGAH                                    \",\n                \"kode_kelurahan_desa\": \"002\"\n            },\n            {\n                \"id_perusahaan\": \"548381\",\n                \"idsbr\": \"97283168\",\n                \"nama_perusahaan\": \"TOKO SEPATU DAN SENDAL TAUFIK\",\n                \"nama_komersial\": \"\",\n                \"alamat\": \"KOMPLEK PLAZA BERINGIN BLOK E NO 3\",\n                \"skor_matching\": \"90.0\",\n                \"rank_nama\": \"30\",\n                \"rank_alamat\": null,\n                \"skor_kalo\": \"60.0\",\n                \"kode_pos\": \"73711\",\n                \"nomor_telepon\": null,\n                \"aktivitas_perusahaan\": \"-\",\n                \"kbli_aktivitas\": \"47712\",\n                \"provinsi_id\": \"57\",\n                \"nama_provinsi\": \"KALIMANTAN TENGAH\",\n                \"kode_provinsi\": \"62\",\n                \"kabupaten_kota_id\": \"903\",\n                \"nama_kabupaten_kota\": \"BARITO SELATAN                                    \",\n                \"kode_kabupaten_kota\": \"04\",\n                \"kecamatan_id\": \"13677\",\n                \"nama_kecamatan\": \"DUSUN SELATAN                                     \",\n                \"kode_kecamatan\": \"040\",\n                \"kelurahan_desa_id\": \"102174\",\n                \"nama_kelurahan_desa\": \"BUNTOK KOTA                                       \",\n                \"kode_kelurahan_desa\": \"014\"\n            },\n            {\n                \"id_perusahaan\": \"553603\",\n                \"idsbr\": \"97283999\",\n                \"nama_perusahaan\": \"TAUFIK RAHMAWATI, CV\",\n                \"nama_komersial\": \"\",\n                \"alamat\": \"JL JAYAKARSA NO 58\",\n                \"skor_matching\": \"90.0\",\n                \"rank_nama\": \"30\",\n                \"rank_alamat\": null,\n                \"skor_kalo\": \"60.0\",\n                \"kode_pos\": \"73712\",\n                \"nomor_telepon\": null,\n                \"aktivitas_perusahaan\": \"KONTRUKSI BANGUNANN SIPIL\",\n                \"kbli_aktivitas\": \"42111\",\n                \"provinsi_id\": \"57\",\n                \"nama_provinsi\": \"KALIMANTAN TENGAH\",\n                \"kode_provinsi\": \"62\",\n                \"kabupaten_kota_id\": \"903\",\n                \"nama_kabupaten_kota\": \"BARITO SELATAN                                    \",\n                \"kode_kabupaten_kota\": \"04\",\n                \"kecamatan_id\": \"13677\",\n                \"nama_kecamatan\": \"DUSUN SELATAN                                     \",\n                \"kode_kecamatan\": \"040\",\n                \"kelurahan_desa_id\": \"102166\",\n                \"nama_kelurahan_desa\": \"HILIR SPER                                        \",\n                \"kode_kelurahan_desa\": \"006\"\n            },\n            {\n                \"id_perusahaan\": \"596155\",\n                \"idsbr\": \"97284893\",\n                \"nama_perusahaan\": \"TOKO BARANG PECAH BELAH TAUFIK K.\",\n                \"nama_komersial\": \"\",\n                \"alamat\": \"JALAN MERANTI\",\n                \"skor_matching\": \"90.0\",\n                \"rank_nama\": \"30\",\n                \"rank_alamat\": null,\n                \"skor_kalo\": \"60.0\",\n                \"kode_pos\": \"73812\",\n                \"nomor_telepon\": null,\n                \"aktivitas_perusahaan\": \"-\",\n                \"kbli_aktivitas\": \"47593\",\n                \"provinsi_id\": \"57\",\n                \"nama_provinsi\": \"KALIMANTAN TENGAH\",\n                \"kode_provinsi\": \"62\",\n                \"kabupaten_kota_id\": \"904\",\n                \"nama_kabupaten_kota\": \"BARITO UTARA                                      \",\n                \"kode_kabupaten_kota\": \"05\",\n                \"kecamatan_id\": \"13684\",\n                \"nama_kecamatan\": \"TEWEH TENGAH                                      \",\n                \"kode_kecamatan\": \"050\",\n                \"kelurahan_desa_id\": \"102280\",\n                \"nama_kelurahan_desa\": \"LANJAS                                            \",\n                \"kode_kelurahan_desa\": \"012\"\n            },\n            {\n                \"id_perusahaan\": \"515587\",\n                \"idsbr\": \"97285686\",\n                \"nama_perusahaan\": \"SERVIS UFIK M TAUFIK\",\n                \"nama_komersial\": \"\",\n                \"alamat\": \"JALAN SENGAJI HULU\",\n                \"skor_matching\": \"90.0\",\n                \"rank_nama\": \"30\",\n                \"rank_alamat\": null,\n                \"skor_kalo\": \"60.0\",\n                \"kode_pos\": \"73811\",\n                \"nomor_telepon\": null,\n                \"aktivitas_perusahaan\": \"-\",\n                \"kbli_aktivitas\": \"95210\",\n                \"provinsi_id\": \"57\",\n                \"nama_provinsi\": \"KALIMANTAN TENGAH\",\n                \"kode_provinsi\": \"62\",\n                \"kabupaten_kota_id\": \"904\",\n                \"nama_kabupaten_kota\": \"BARITO UTARA                                      \",\n                \"kode_kabupaten_kota\": \"05\",\n                \"kecamatan_id\": \"13684\",\n                \"nama_kecamatan\": \"TEWEH TENGAH                                      \",\n                \"kode_kecamatan\": \"050\",\n                \"kelurahan_desa_id\": \"102281\",\n                \"nama_kelurahan_desa\": \"MELAYU                                            \",\n                \"kode_kelurahan_desa\": \"013\"\n            },\n            {\n                \"id_perusahaan\": \"660992\",\n                \"idsbr\": \"97287311\",\n                \"nama_perusahaan\": \"KIOS BAJU TAUFIK\",\n                \"nama_komersial\": \"\",\n                \"alamat\": \"JLN DJAGUI MANUD\",\n                \"skor_matching\": \"90.0\",\n                \"rank_nama\": \"30\",\n                \"rank_alamat\": null,\n                \"skor_kalo\": \"60.0\",\n                \"kode_pos\": \"74611\",\n                \"nomor_telepon\": null,\n                \"aktivitas_perusahaan\": \"-\",\n                \"kbli_aktivitas\": \"47711\",\n                \"provinsi_id\": \"57\",\n                \"nama_provinsi\": \"KALIMANTAN TENGAH\",\n                \"kode_provinsi\": \"62\",\n                \"kabupaten_kota_id\": \"906\",\n                \"nama_kabupaten_kota\": \"LAMANDAU                                          \",\n                \"kode_kabupaten_kota\": \"07\",\n                \"kecamatan_id\": \"13694\",\n                \"nama_kecamatan\": \"BULIK                                             \",\n                \"kode_kecamatan\": \"010\",\n                \"kelurahan_desa_id\": \"102366\",\n                \"nama_kelurahan_desa\": \"NANGA BULIK                                       \",\n                \"kode_kelurahan_desa\": \"005\"\n            },\n            {\n                \"id_perusahaan\": \"646590\",\n                \"idsbr\": \"97289332\",\n                \"nama_perusahaan\": \"TRAVEL MITRA SETIA TAUFIK HASAN\",\n                \"nama_komersial\": \"\",\n                \"alamat\": \"JALAN JENDERAL SUDIRMAN\",\n                \"skor_matching\": \"90.0\",\n                \"rank_nama\": \"30\",\n                \"rank_alamat\": null,\n                \"skor_kalo\": \"60.0\",\n                \"kode_pos\": \"74271\",\n                \"nomor_telepon\": null,\n                \"aktivitas_perusahaan\": \"-\",\n                \"kbli_aktivitas\": \"79112\",\n                \"provinsi_id\": \"57\",\n                \"nama_provinsi\": \"KALIMANTAN TENGAH\",\n                \"kode_provinsi\": \"62\",\n                \"kabupaten_kota_id\": \"907\",\n                \"nama_kabupaten_kota\": \"SERUYAN                                           \",\n                \"kode_kabupaten_kota\": \"08\",\n                \"kecamatan_id\": \"13707\",\n                \"nama_kecamatan\": \"DANAU SELULUK                                     \",\n                \"kode_kecamatan\": \"031\",\n                \"kelurahan_desa_id\": \"102488\",\n                \"nama_kelurahan_desa\": \"RUNGAU RAYA                                       \",\n                \"kode_kelurahan_desa\": \"002\"\n            },\n            {\n                \"id_perusahaan\": \"583092\",\n                \"idsbr\": \"97283909\",\n                \"nama_perusahaan\": \"MOLDING KAYU TAUFIK\",\n                \"nama_komersial\": \"\",\n                \"alamat\": \"JL PAHLAWAN\",\n                \"skor_matching\": \"90.0\",\n                \"rank_nama\": \"30\",\n                \"rank_alamat\": null,\n                \"skor_kalo\": \"60.0\",\n                \"kode_pos\": \"73711\",\n                \"nomor_telepon\": null,\n                \"aktivitas_perusahaan\": \"PEMBUATAN BARANG BANGUNAN DARI KAYU\",\n                \"kbli_aktivitas\": \"16221\",\n                \"provinsi_id\": \"57\",\n                \"nama_provinsi\": \"KALIMANTAN TENGAH\",\n                \"kode_provinsi\": \"62\",\n                \"kabupaten_kota_id\": \"903\",\n                \"nama_kabupaten_kota\": \"BARITO SELATAN                                    \",\n                \"kode_kabupaten_kota\": \"04\",\n                \"kecamatan_id\": \"13677\",\n                \"nama_kecamatan\": \"DUSUN SELATAN                                     \",\n                \"kode_kecamatan\": \"040\",\n                \"kelurahan_desa_id\": \"102174\",\n                \"nama_kelurahan_desa\": \"BUNTOK KOTA                                       \",\n                \"kode_kelurahan_desa\": \"014\"\n            },\n            {\n                \"id_perusahaan\": \"592740\",\n                \"idsbr\": \"97286899\",\n                \"nama_perusahaan\": \"AGENSI PELAYARAN TAUFIK\",\n                \"nama_komersial\": \"\",\n                \"alamat\": \"JALAN PANGERAN SUKARMA KELURAHAN MENDAWAI\",\n                \"skor_matching\": \"90.0\",\n                \"rank_nama\": \"30\",\n                \"rank_alamat\": null,\n                \"skor_kalo\": \"60.0\",\n                \"kode_pos\": \"74712\",\n                \"nomor_telepon\": null,\n                \"aktivitas_perusahaan\": \"AGENCY PELAYARAN\",\n                \"kbli_aktivitas\": \"52293\",\n                \"provinsi_id\": \"57\",\n                \"nama_provinsi\": \"KALIMANTAN TENGAH\",\n                \"kode_provinsi\": \"62\",\n                \"kabupaten_kota_id\": \"905\",\n                \"nama_kabupaten_kota\": \"SUKAMARA                                          \",\n                \"kode_kabupaten_kota\": \"06\",\n                \"kecamatan_id\": \"13691\",\n                \"nama_kecamatan\": \"SUKAMARA                                          \",\n                \"kode_kecamatan\": \"020\",\n                \"kelurahan_desa_id\": \"102340\",\n                \"nama_kelurahan_desa\": \"MENDAWAI                                          \",\n                \"kode_kelurahan_desa\": \"001\"\n            },\n            {\n                \"id_perusahaan\": \"548048\",\n                \"idsbr\": \"97283104\",\n                \"nama_perusahaan\": \"PEDAGANG ECERAN MINUMAN MINERAL TAUFIK RAHMAN\",\n                \"nama_komersial\": \"\",\n                \"alamat\": \"JALAN VETRAN\",\n                \"skor_matching\": \"90.0\",\n                \"rank_nama\": \"30\",\n                \"rank_alamat\": null,\n                \"skor_kalo\": \"60.0\",\n                \"kode_pos\": \"73711\",\n                \"nomor_telepon\": null,\n                \"aktivitas_perusahaan\": \"-\",\n                \"kbli_aktivitas\": \"47222\",\n                \"provinsi_id\": \"57\",\n                \"nama_provinsi\": \"KALIMANTAN TENGAH\",\n                \"kode_provinsi\": \"62\",\n                \"kabupaten_kota_id\": \"903\",\n                \"nama_kabupaten_kota\": \"BARITO SELATAN                                    \",\n                \"kode_kabupaten_kota\": \"04\",\n                \"kecamatan_id\": \"13677\",\n                \"nama_kecamatan\": \"DUSUN SELATAN                                     \",\n                \"kode_kecamatan\": \"040\",\n                \"kelurahan_desa_id\": \"102174\",\n                \"nama_kelurahan_desa\": \"BUNTOK KOTA                                       \",\n                \"kode_kelurahan_desa\": \"014\"\n            },\n            {\n                \"id_perusahaan\": \"649948\",\n                \"idsbr\": \"97287213\",\n                \"nama_perusahaan\": \"SHOROOM TOMI SUKMA MOTOR TAUFIK\",\n                \"nama_komersial\": \"\",\n                \"alamat\": \"JALAN CILIK RIWUT\",\n                \"skor_matching\": \"90.0\",\n                \"rank_nama\": \"30\",\n                \"rank_alamat\": null,\n                \"skor_kalo\": \"60.0\",\n                \"kode_pos\": \"74712\",\n                \"nomor_telepon\": null,\n                \"aktivitas_perusahaan\": \"-\",\n                \"kbli_aktivitas\": \"45404\",\n                \"provinsi_id\": \"57\",\n                \"nama_provinsi\": \"KALIMANTAN TENGAH\",\n                \"kode_provinsi\": \"62\",\n                \"kabupaten_kota_id\": \"905\",\n                \"nama_kabupaten_kota\": \"SUKAMARA                                          \",\n                \"kode_kabupaten_kota\": \"06\",\n                \"kecamatan_id\": \"13691\",\n                \"nama_kecamatan\": \"SUKAMARA                                          \",\n                \"kode_kecamatan\": \"020\",\n                \"kelurahan_desa_id\": \"102340\",\n                \"nama_kelurahan_desa\": \"MENDAWAI                                          \",\n                \"kode_kelurahan_desa\": \"001\"\n            },\n            {\n                \"id_perusahaan\": \"548079\",\n                \"idsbr\": \"97283146\",\n                \"nama_perusahaan\": \"WARUNG MAKAN TAUFIK\",\n                \"nama_komersial\": \"\",\n                \"alamat\": \"JALAN PAHLAWAN BAWAH\",\n                \"skor_matching\": \"90.0\",\n                \"rank_nama\": \"30\",\n                \"rank_alamat\": null,\n                \"skor_kalo\": \"60.0\",\n                \"kode_pos\": \"73711\",\n                \"nomor_telepon\": null,\n                \"aktivitas_perusahaan\": \"-\",\n                \"kbli_aktivitas\": \"56102\",\n                \"provinsi_id\": \"57\",\n                \"nama_provinsi\": \"KALIMANTAN TENGAH\",\n                \"kode_provinsi\": \"62\",\n                \"kabupaten_kota_id\": \"903\",\n                \"nama_kabupaten_kota\": \"BARITO SELATAN                                    \",\n                \"kode_kabupaten_kota\": \"04\",\n                \"kecamatan_id\": \"13677\",\n                \"nama_kecamatan\": \"DUSUN SELATAN                                     \",\n                \"kode_kecamatan\": \"040\",\n                \"kelurahan_desa_id\": \"102174\",\n                \"nama_kelurahan_desa\": \"BUNTOK KOTA                                       \",\n                \"kode_kelurahan_desa\": \"014\"\n            },\n            {\n                \"id_perusahaan\": \"645516\",\n                \"idsbr\": \"97295405\",\n                \"nama_perusahaan\": \"TOKO TAUFIK\",\n                \"nama_komersial\": \"\",\n                \"alamat\": \"JALAN AYANI SULUNG\",\n                \"skor_matching\": \"90.0\",\n                \"rank_nama\": \"30\",\n                \"rank_alamat\": null,\n                \"skor_kalo\": \"60.0\",\n                \"kode_pos\": \"73611\",\n                \"nomor_telepon\": null,\n                \"aktivitas_perusahaan\": \"-\",\n                \"kbli_aktivitas\": \"47711\",\n                \"provinsi_id\": \"57\",\n                \"nama_provinsi\": \"KALIMANTAN TENGAH\",\n                \"kode_provinsi\": \"62\",\n                \"kabupaten_kota_id\": \"911\",\n                \"nama_kabupaten_kota\": \"BARITO TIMUR                                      \",\n                \"kode_kabupaten_kota\": \"12\",\n                \"kecamatan_id\": \"13746\",\n                \"nama_kecamatan\": \"DUSUN TIMUR                                       \",\n                \"kode_kecamatan\": \"020\",\n                \"kelurahan_desa_id\": \"102950\",\n                \"nama_kelurahan_desa\": \"TAMIANG LAYANG                                    \",\n                \"kode_kelurahan_desa\": \"006\"\n            },\n            {\n                \"id_perusahaan\": \"605283\",\n                \"idsbr\": \"97294674\",\n                \"nama_perusahaan\": \"TOKO HP A`AN TAUFIK\",\n                \"nama_komersial\": \"\",\n                \"alamat\": \"JALAN A YANI SULUNG\",\n                \"skor_matching\": \"90.0\",\n                \"rank_nama\": \"30\",\n                \"rank_alamat\": null,\n                \"skor_kalo\": \"60.0\",\n                \"kode_pos\": \"73611\",\n                \"nomor_telepon\": null,\n                \"aktivitas_perusahaan\": \"-\",\n                \"kbli_aktivitas\": \"47877\",\n                \"provinsi_id\": \"57\",\n                \"nama_provinsi\": \"KALIMANTAN TENGAH\",\n                \"kode_provinsi\": \"62\",\n                \"kabupaten_kota_id\": \"911\",\n                \"nama_kabupaten_kota\": \"BARITO TIMUR                                      \",\n                \"kode_kabupaten_kota\": \"12\",\n                \"kecamatan_id\": \"13746\",\n                \"nama_kecamatan\": \"DUSUN TIMUR                                       \",\n                \"kode_kecamatan\": \"020\",\n                \"kelurahan_desa_id\": \"102950\",\n                \"nama_kelurahan_desa\": \"TAMIANG LAYANG                                    \",\n                \"kode_kelurahan_desa\": \"006\"\n            },\n            {\n                \"id_perusahaan\": \"642708\",\n                \"idsbr\": \"97295208\",\n                \"nama_perusahaan\": \"TOKO TAUFIK HIDAYAT\",\n                \"nama_komersial\": \"\",\n                \"alamat\": \"JALAN RADEN SOESILO\",\n                \"skor_matching\": \"90.0\",\n                \"rank_nama\": \"30\",\n                \"rank_alamat\": null,\n                \"skor_kalo\": \"60.0\",\n                \"kode_pos\": \"73652\",\n                \"nomor_telepon\": null,\n                \"aktivitas_perusahaan\": \"-\",\n                \"kbli_aktivitas\": \"47630\",\n                \"provinsi_id\": \"57\",\n                \"nama_provinsi\": \"KALIMANTAN TENGAH\",\n                \"kode_provinsi\": \"62\",\n                \"kabupaten_kota_id\": \"911\",\n                \"nama_kabupaten_kota\": \"BARITO TIMUR                                      \",\n                \"kode_kabupaten_kota\": \"12\",\n                \"kecamatan_id\": \"13750\",\n                \"nama_kecamatan\": \"DUSUN TENGAH                                      \",\n                \"kode_kecamatan\": \"050\",\n                \"kelurahan_desa_id\": \"102996\",\n                \"nama_kelurahan_desa\": \"AMPAH KOTA                                        \",\n                \"kode_kelurahan_desa\": \"008\"\n            },\n            {\n                \"id_perusahaan\": \"1020132\",\n                \"idsbr\": \"97708937\",\n                \"nama_perusahaan\": \"JUAL BELI EMAS TAUFIK\",\n                \"nama_komersial\": \"\",\n                \"alamat\": \"JL.BERDIKARI\",\n                \"skor_matching\": \"90.0\",\n                \"rank_nama\": \"30\",\n                \"rank_alamat\": null,\n                \"skor_kalo\": \"60.0\",\n                \"kode_pos\": \"74451\",\n                \"nomor_telepon\": null,\n                \"aktivitas_perusahaan\": \"-\",\n                \"kbli_aktivitas\": \"47735\",\n                \"provinsi_id\": \"57\",\n                \"nama_provinsi\": \"KALIMANTAN TENGAH\",\n                \"kode_provinsi\": \"62\",\n                \"kabupaten_kota_id\": \"908\",\n                \"nama_kabupaten_kota\": \"KATINGAN                                          \",\n                \"kode_kabupaten_kota\": \"09\",\n                \"kecamatan_id\": \"13716\",\n                \"nama_kecamatan\": \"KATINGAN HILIR                                    \",\n                \"kode_kecamatan\": \"050\",\n                \"kelurahan_desa_id\": \"102598\",\n                \"nama_kelurahan_desa\": \"HAMPALIT                                          \",\n                \"kode_kelurahan_desa\": \"008\"\n            },\n            {\n                \"id_perusahaan\": \"640335\",\n                \"idsbr\": \"97295307\",\n                \"nama_perusahaan\": \"PENYEWAAN RUMAH TAUFIK S\",\n                \"nama_komersial\": \"\",\n                \"alamat\": \"JALAN PAHLAWAN GANG BANGUN ASRI\",\n                \"skor_matching\": \"90.0\",\n                \"rank_nama\": \"30\",\n                \"rank_alamat\": null,\n                \"skor_kalo\": \"60.0\",\n                \"kode_pos\": \"73652\",\n                \"nomor_telepon\": null,\n                \"aktivitas_perusahaan\": \"-\",\n                \"kbli_aktivitas\": \"68110\",\n                \"provinsi_id\": \"57\",\n                \"nama_provinsi\": \"KALIMANTAN TENGAH\",\n                \"kode_provinsi\": \"62\",\n                \"kabupaten_kota_id\": \"911\",\n                \"nama_kabupaten_kota\": \"BARITO TIMUR                                      \",\n                \"kode_kabupaten_kota\": \"12\",\n                \"kecamatan_id\": \"13750\",\n                \"nama_kecamatan\": \"DUSUN TENGAH                                      \",\n                \"kode_kecamatan\": \"050\",\n                \"kelurahan_desa_id\": \"102996\",\n                \"nama_kelurahan_desa\": \"AMPAH KOTA                                        \",\n                \"kode_kelurahan_desa\": \"008\"\n            },\n            {\n                \"id_perusahaan\": \"515578\",\n                \"idsbr\": \"97285675\",\n                \"nama_perusahaan\": \"INDAH BUSANA SITI\",\n                \"nama_komersial\": \"\",\n                \"alamat\": \"JALAN SENGAJI HULU\",\n                \"skor_matching\": \"78.0\",\n                \"rank_nama\": \"26\",\n                \"rank_alamat\": null,\n                \"skor_kalo\": \"52.0\",\n                \"kode_pos\": \"73811\",\n                \"nomor_telepon\": null,\n                \"aktivitas_perusahaan\": \"-\",\n                \"kbli_aktivitas\": \"47711\",\n                \"provinsi_id\": \"57\",\n                \"nama_provinsi\": \"KALIMANTAN TENGAH\",\n                \"kode_provinsi\": \"62\",\n                \"kabupaten_kota_id\": \"904\",\n                \"nama_kabupaten_kota\": \"BARITO UTARA                                      \",\n                \"kode_kabupaten_kota\": \"05\",\n                \"kecamatan_id\": \"13684\",\n                \"nama_kecamatan\": \"TEWEH TENGAH                                      \",\n                \"kode_kecamatan\": \"050\",\n                \"kelurahan_desa_id\": \"102281\",\n                \"nama_kelurahan_desa\": \"MELAYU                                            \",\n                \"kode_kelurahan_desa\": \"013\"\n            },\n            {\n                \"id_perusahaan\": \"582350\",\n                \"idsbr\": \"97283893\",\n                \"nama_perusahaan\": \"TOKO BUSANA CARRYSA\",\n                \"nama_komersial\": \"\",\n                \"alamat\": \"JL KARANG PACI\",\n                \"skor_matching\": \"78.0\",\n                \"rank_nama\": \"26\",\n                \"rank_alamat\": null,\n                \"skor_kalo\": \"52.0\",\n                \"kode_pos\": \"73711\",\n                \"nomor_telepon\": null,\n                \"aktivitas_perusahaan\": \"-\",\n                \"kbli_aktivitas\": \"47711\",\n                \"provinsi_id\": \"57\",\n                \"nama_provinsi\": \"KALIMANTAN TENGAH\",\n                \"kode_provinsi\": \"62\",\n                \"kabupaten_kota_id\": \"903\",\n                \"nama_kabupaten_kota\": \"BARITO SELATAN                                    \",\n                \"kode_kabupaten_kota\": \"04\",\n                \"kecamatan_id\": \"13677\",\n                \"nama_kecamatan\": \"DUSUN SELATAN                                     \",\n                \"kode_kecamatan\": \"040\",\n                \"kelurahan_desa_id\": \"102174\",\n                \"nama_kelurahan_desa\": \"BUNTOK KOTA                                       \",\n                \"kode_kelurahan_desa\": \"014\"\n            },\n            {\n                \"id_perusahaan\": \"677433\",\n                \"idsbr\": \"97292310\",\n                \"nama_perusahaan\": \"TOKO BAJU MULYA BUSANA TUMINI\",\n                \"nama_komersial\": \"\",\n                \"alamat\": \"JALAN TJILIK AWUT KM 19\",\n                \"skor_matching\": \"78.0\",\n                \"rank_nama\": \"26\",\n                \"rank_alamat\": null,\n                \"skor_kalo\": \"52.0\",\n                \"kode_pos\": \"74451\",\n                \"nomor_telepon\": null,\n                \"aktivitas_perusahaan\": \"-\",\n                \"kbli_aktivitas\": \"47711\",\n                \"provinsi_id\": \"57\",\n                \"nama_provinsi\": \"KALIMANTAN TENGAH\",\n                \"kode_provinsi\": \"62\",\n                \"kabupaten_kota_id\": \"908\",\n                \"nama_kabupaten_kota\": \"KATINGAN                                          \",\n                \"kode_kabupaten_kota\": \"09\",\n                \"kecamatan_id\": \"13716\",\n                \"nama_kecamatan\": \"KATINGAN HILIR                                    \",\n                \"kode_kecamatan\": \"050\",\n                \"kelurahan_desa_id\": \"102598\",\n                \"nama_kelurahan_desa\": \"HAMPALIT                                          \",\n                \"kode_kelurahan_desa\": \"008\"\n            },\n            {\n                \"id_perusahaan\": \"547602\",\n                \"idsbr\": \"97282989\",\n                \"nama_perusahaan\": \"YULIA BUSANA SRI DEWI\",\n                \"nama_komersial\": \"\",\n                \"alamat\": \"JALAN VETERAN NO. 11\",\n                \"skor_matching\": \"78.0\",\n                \"rank_nama\": \"26\",\n                \"rank_alamat\": null,\n                \"skor_kalo\": \"52.0\",\n                \"kode_pos\": \"73711\",\n                \"nomor_telepon\": null,\n                \"aktivitas_perusahaan\": \"-\",\n                \"kbli_aktivitas\": \"14120\",\n                \"provinsi_id\": \"57\",\n                \"nama_provinsi\": \"KALIMANTAN TENGAH\",\n                \"kode_provinsi\": \"62\",\n                \"kabupaten_kota_id\": \"903\",\n                \"nama_kabupaten_kota\": \"BARITO SELATAN                                    \",\n                \"kode_kabupaten_kota\": \"04\",\n                \"kecamatan_id\": \"13677\",\n                \"nama_kecamatan\": \"DUSUN SELATAN                                     \",\n                \"kode_kecamatan\": \"040\",\n                \"kelurahan_desa_id\": \"102174\",\n                \"nama_kelurahan_desa\": \"BUNTOK KOTA                                       \",\n                \"kode_kelurahan_desa\": \"014\"\n            }\n        ]\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Data Matching",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{    \r\n    \"id_alokasi\": 80053,\r\n    \"id_spool\": 28492,\r\n    \"idsbr\": [11111, 22222]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://webapps.bps.go.id/pengolahansbr/matcha-backend/api/kegiatan/2/matching/2",
+					"protocol": "https",
+					"host": [
+						"webapps",
+						"bps",
+						"go",
+						"id"
+					],
+					"path": [
+						"pengolahansbr",
+						"matcha-backend",
+						"api",
+						"kegiatan",
+						"2",
+						"matching",
+						"2"
+					]
+				},
+				"description": "Menyimpan data hasil matching\n\nhttps://webapps.bps.go.id/pengolahansbr/matcha-backend/api/kegiatan/{{id_kegiatan}}/matching/{{id_user}}"
+			},
+			"response": [
+				{
+					"name": "Simpan Data Matching - No Match",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{    \r\n    \"id_alokasi\": 83529,\r\n    \"id_spool\": 31968,\r\n    \"idsbr\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost/matcha-backend/api/kegiatan/2/matching/2",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"matcha-backend",
+								"api",
+								"kegiatan",
+								"2",
+								"matching",
+								"2"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 20 Mar 2022 23:36:55 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.33 (Win32) OpenSSL/1.0.2o PHP/5.6.36"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/5.6.36"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Content-Length",
+							"value": "98"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"meta\": {\n        \"code\": 200,\n        \"status\": \"success\",\n        \"message\": \"Berhasil menyimpan hasil matching\"\n    },\n    \"data\": null\n}"
+				},
+				{
+					"name": "Simpan Data Matching - Match",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{    \r\n    \"id_alokasi\": 80053,\r\n    \"id_spool\": 28492,\r\n    \"idsbr\": [11111, 22222]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost/matcha-backend/api/kegiatan/2/matching/2",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"matcha-backend",
+								"api",
+								"kegiatan",
+								"2",
+								"matching",
+								"2"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 20 Mar 2022 23:44:34 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.33 (Win32) OpenSSL/1.0.2o PHP/5.6.36"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/5.6.36"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Content-Length",
+							"value": "98"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"meta\": {\n        \"code\": 200,\n        \"status\": \"success\",\n        \"message\": \"Berhasil menyimpan hasil matching\"\n    },\n    \"data\": null\n}"
+				}
+			]
+		},
+		{
+			"name": "Alokasi Assessment",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://webapps.bps.go.id/pengolahansbr/matcha-backend/api/kegiatan/2/assessment/alokasi",
+					"protocol": "https",
+					"host": [
+						"webapps",
+						"bps",
+						"go",
+						"id"
+					],
+					"path": [
+						"pengolahansbr",
+						"matcha-backend",
+						"api",
+						"kegiatan",
+						"2",
+						"assessment",
+						"alokasi"
+					]
+				},
+				"description": "Mendapatkan alokasi petugas assessment\n\nhttps://webapps.bps.go.id/pengolahansbr/matcha-backend/api/kegiatan/{{id_kegiatan}}/assessment/alokasi"
+			},
+			"response": [
+				{
+					"name": "Alokasi Assessment - 1 (Empty)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/matcha-backend/api/kegiatan/2/assessment/alokasi",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"matcha-backend",
+								"api",
+								"kegiatan",
+								"2",
+								"assessment",
+								"alokasi"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 21 Mar 2022 08:22:31 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.33 (Win32) OpenSSL/1.0.2o PHP/5.6.36"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/5.6.36"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "Content-Length",
+							"value": "229"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"meta\": {\n        \"code\": 200,\n        \"status\": \"success\",\n        \"message\": \"Data alokasi petugas assessment berhasil diambil\"\n    },\n    \"data\": {\n        \"summary\": {\n            \"id_kegiatan\": \"2\",\n            \"teralokasi\": \"0\",\n            \"belum_teralokasi\": \"25981\",\n            \"total_data_assessment\": \"25981\"\n        },\n        \"alokasi\": []\n    }\n}"
+				},
+				{
+					"name": "Alokasi Assessment - 2",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/matcha-backend/api/kegiatan/2/assessment/alokasi",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"matcha-backend",
+								"api",
+								"kegiatan",
+								"2",
+								"assessment",
+								"alokasi"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 21 Mar 2022 08:23:50 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.33 (Win32) OpenSSL/1.0.2o PHP/5.6.36"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/5.6.36"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Content-Length",
+							"value": "342"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"meta\": {\n        \"code\": 200,\n        \"status\": \"success\",\n        \"message\": \"Data alokasi petugas assessment berhasil diambil\"\n    },\n    \"data\": {\n        \"summary\": {\n            \"id_kegiatan\": \"2\",\n            \"teralokasi\": \"3\",\n            \"belum_teralokasi\": \"25978\",\n            \"total_data_assessment\": \"25981\"\n        },\n        \"alokasi\": [\n            {\n                \"id_user\": \"2\",\n                \"name\": \"Administrator\",\n                \"jumlah_alokasi\": \"2\"\n            },\n            {\n                \"id_user\": \"1\",\n                \"name\": \"Yovi MN\",\n                \"jumlah_alokasi\": \"1\"\n            }\n        ]\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Insert / Update Alokasi Assessment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://webapps.bps.go.id/pengolahansbr/matcha-backend/api/kegiatan/2/assessment/alokasi",
+					"protocol": "https",
+					"host": [
+						"webapps",
+						"bps",
+						"go",
+						"id"
+					],
+					"path": [
+						"pengolahansbr",
+						"matcha-backend",
+						"api",
+						"kegiatan",
+						"2",
+						"assessment",
+						"alokasi"
+					]
+				},
+				"description": "Menyimpan dan atau memperbarui data alokasi petugas assessment\n\nhttps://webapps.bps.go.id/pengolahansbr/matcha-backend/api/kegiatan/{{id_kegiatan}}/assessment/alokasi"
+			},
+			"response": [
+				{
+					"name": "Insert / Update Alokasi Assessment",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id_kegiatan\": 2,\r\n    \"alokasi\": [\r\n        {\r\n            \"id_user\": 1,\r\n            \"jumlah_alokasi\": 50\r\n        },\r\n        {\r\n            \"id_user\": 2,\r\n            \"jumlah_alokasi\": 50\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost/matcha-backend/api/kegiatan/2/assessment/alokasi",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"matcha-backend",
+								"api",
+								"kegiatan",
+								"2",
+								"assessment",
+								"alokasi"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 21 Mar 2022 08:31:24 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.33 (Win32) OpenSSL/1.0.2o PHP/5.6.36"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/5.6.36"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Content-Length",
+							"value": "201"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"meta\": {\n        \"code\": 200,\n        \"status\": \"success\",\n        \"message\": \"Berhasil melakukan alokasi petugas matching\"\n    },\n    \"data\": {\n        \"id_kegiatan\": \"2\",\n        \"teralokasi\": \"103\",\n        \"belum_teralokasi\": \"25878\",\n        \"total_data_assessment\": \"25981\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Data Assessment",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://webapps.bps.go.id/pengolahansbr/matcha-backend/api/kegiatan/2/assessment/2",
+					"protocol": "https",
+					"host": [
+						"webapps",
+						"bps",
+						"go",
+						"id"
+					],
+					"path": [
+						"pengolahansbr",
+						"matcha-backend",
+						"api",
+						"kegiatan",
+						"2",
+						"assessment",
+						"2"
+					]
+				},
+				"description": "Mendapatkan data untuk proses assessment\n\nhttps://webapps.bps.go.id/pengolahansbr/matcha-backend/api/kegiatan/{{id_kegiatan}}/assessment/{{id_user}}"
+			},
+			"response": [
+				{
+					"name": "Get Data Assessment",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/matcha-backend/api/kegiatan/2/assessment/2",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"matcha-backend",
+								"api",
+								"kegiatan",
+								"2",
+								"assessment",
+								"2"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 21 Mar 2022 12:05:57 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.33 (Win32) OpenSSL/1.0.2o PHP/5.6.36"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/5.6.36"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Content-Length",
+							"value": "5014"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"meta\": {\n        \"code\": 200,\n        \"status\": \"success\",\n        \"message\": \"Data assessment berhasil diambil\"\n    },\n    \"data\": {\n        \"id_alokasi\": \"45890\",\n        \"summary\": {\n            \"id_kegiatan\": \"2\",\n            \"sudah_assessment\": \"0\",\n            \"belum_assessment\": \"52\",\n            \"total_data_assessment\": \"52\"\n        },\n        \"data_sbr\": {\n            \"idsbr\": \"97251660\",\n            \"alamat\": \"JL. HASANUDIN NO. 72\",\n            \"aset\": \"0.0\",\n            \"jam_buka\": null,\n            \"jam_tutup\": null,\n            \"jenis_kelamin_pengusaha\": null,\n            \"jumlah_kamar\": null,\n            \"kode_pos\": \"78716\",\n            \"kodese\": null,\n            \"latitude\": null,\n            \"longitude\": null,\n            \"multi_national_status\": null,\n            \"nama\": \"GUCI KAPUAS LELUHUR, PT\",\n            \"nama_komersial\": \"GUCI KAPUAS LELUHUR PT\",\n            \"nomor_kode_area\": \"\",\n            \"npwp\": null,\n            \"pajak_tahun_pendaftarannpwp\": null,\n            \"pajak_tahunspt\": null,\n            \"pajak_tanggal_update\": null,\n            \"pendapatan_per_tahun\": \"0.0\",\n            \"pengeluaran_per_tahun\": \"0.0\",\n            \"pengusaha_pemilik\": \"CHALIF ZULKARNAIN\",\n            \"skala_usaha\": \"SBR_MENENGAH\",\n            \"status_kepemilikan\": null,\n            \"tahun_beroperasi\": \"2000\",\n            \"tahun_pendirian\": null,\n            \"tahun_ref_aset\": null,\n            \"tahun_ref_kompensasi_asing\": null,\n            \"tahun_ref_kompensasi_lokal\": null,\n            \"tahun_ref_pendapatan\": null,\n            \"tahun_ref_pengeluaran\": null,\n            \"tahun_ref_skala_usaha\": null,\n            \"tahun_ref_tenaga_kerja_asing\": null,\n            \"tahun_ref_tenaga_kerja_lokal\": null,\n            \"tanggal_lahir_pengusaha\": null,\n            \"total_kompensasi_asing_per_tahun\": null,\n            \"total_kompensasi_lokal_per_tahun\": null,\n            \"total_tenaga_kerja_asing_per_tahun\": null,\n            \"total_tenaga_kerja_lokal_per_tahun\": \"72\",\n            \"unit_statistik\": \"SBR_ENTERPRISE\",\n            \"jaringan_usaha_id\": null,\n            \"jaringan_usaha_kode\": null,\n            \"jaringan_usaha_nama\": null,\n            \"jenis_badan_hukum_badan_usaha_id\": \"1\",\n            \"jenis_badan_hukum_badan_usaha_kode\": \"1\",\n            \"jenis_badan_hukum_badan_usaha_nama\": \"PT/PT Persero/Perum\",\n            \"kabupaten_kota_id\": \"892\",\n            \"kabupaten_kota_kode\": \"08\",\n            \"kabupaten_kota_nama\": \"KAPUAS HULU                                       \",\n            \"kbji_pengusaha_id\": null,\n            \"kbji_pengusaha_kode\": null,\n            \"kbji_pengusaha_nama\": null,\n            \"kecamatan_id\": \"13589\",\n            \"kecamatan_kode\": \"230\",\n            \"kecamatan_nama\": \"PUTUSSIBAU UTARA                                  \",\n            \"kelurahan_desa_id\": \"101131\",\n            \"kelurahan_desa_kode\": \"001\",\n            \"kelurahan_desa_nama\": \"HILIR KANTOR                                      \",\n            \"kewarganegaraan_pengusaha_id\": null,\n            \"kewarganegaraan_pengusaha_kode\": \"138\",\n            \"kewarganegaraan_pengusaha_nama\": \"INDONESIA\",\n            \"negara_id\": \"28\",\n            \"negara_kode\": \"138\",\n            \"negara_nama\": \"INDONESIA\",\n            \"pajak_jeniswp_id\": null,\n            \"pajak_jeniswp_kode\": null,\n            \"pajak_jeniswp_nama\": null,\n            \"pajak_skala_usaha_id\": null,\n            \"pajak_skala_usaha_kode\": null,\n            \"pajak_skala_usaha_nama\": null,\n            \"pajak_statuswp_id\": null,\n            \"pajak_statuswp_kode\": null,\n            \"pajak_statuswp_nama\": null,\n            \"provinsi_id\": \"56\",\n            \"provinsi_kode\": \"61\",\n            \"provinsi_nama\": \"KALIMANTAN BARAT\",\n            \"sektor_institusi_id\": null,\n            \"sektor_institusi_kode\": null,\n            \"sektor_institusi_nama\": null,\n            \"status_perusahaan_id\": \"1\",\n            \"status_perusahaan_kode\": \"1\",\n            \"status_perusahaan_nama\": \"Aktif\",\n            \"produk_perusahaan\": [],\n            \"aktivitas_perusahaan\": [\n                {\n                    \"id\": \"837835\",\n                    \"aktivitas\": \"JASA PEMBUATAN DESAIN INTERIOR\",\n                    \"jenis\": \"SBR_MAIN_ACTIVITY\",\n                    \"kategori\": \"F\",\n                    \"kbli\": \"43304\",\n                    \"perusahaan_id\": \"450621\"\n                }\n            ],\n            \"pemegang_saham\": [],\n            \"alamat_email_perusahaan\": [],\n            \"alamat_fax_perusahaan\": [],\n            \"alamat_telepon_perusahaan\": [],\n            \"alamat_web_perusahaan\": [],\n            \"kontak_perusahaan\": []\n        },\n        \"data_assessment\": [\n            {\n                \"idsbr\": \"97251660\",\n                \"alamat\": \"JL. HASANUDIN NO. 72 RT:  RW:  KODEPOS: 78716\",\n                \"aset\": null,\n                \"jam_buka\": null,\n                \"jam_tutup\": null,\n                \"jenis_kelamin_pengusaha\": null,\n                \"jumlah_kamar\": null,\n                \"kode_pos\": \"78716\",\n                \"kodese\": null,\n                \"latitude\": null,\n                \"longitude\": null,\n                \"multi_national_status\": null,\n                \"nama\": \"GUCI KAPUAS LELUHUR, PT\",\n                \"nama_komersial\": null,\n                \"nomor_kode_area\": null,\n                \"npwp\": null,\n                \"pajak_tahun_pendaftarannpwp\": null,\n                \"pajak_tahunspt\": null,\n                \"pajak_tanggal_update\": null,\n                \"pendapatan_per_tahun\": \"3052640056.0\",\n                \"pengeluaran_per_tahun\": \"2747376000.0\",\n                \"pengusaha_pemilik\": null,\n                \"skala_usaha\": \"UMB\",\n                \"status_kepemilikan\": null,\n                \"tahun_beroperasi\": null,\n                \"tahun_pendirian\": null,\n                \"tahun_ref_aset\": null,\n                \"tahun_ref_kompensasi_asing\": null,\n                \"tahun_ref_kompensasi_lokal\": null,\n                \"tahun_ref_pendapatan\": null,\n                \"tahun_ref_pengeluaran\": null,\n                \"tahun_ref_skala_usaha\": null,\n                \"tahun_ref_tenaga_kerja_asing\": null,\n                \"tahun_ref_tenaga_kerja_lokal\": null,\n                \"tanggal_lahir_pengusaha\": null,\n                \"total_kompensasi_asing_per_tahun\": null,\n                \"total_kompensasi_lokal_per_tahun\": null,\n                \"total_tenaga_kerja_asing_per_tahun\": null,\n                \"total_tenaga_kerja_lokal_per_tahun\": null,\n                \"unit_statistik\": null,\n                \"jaringan_usaha\": \"1\",\n                \"jenis_badan_hukum_badan_usaha\": \"1\",\n                \"kabupaten_kota_kode\": \"08\",\n                \"kbji_pengusaha\": null,\n                \"kecamatan_kode\": \"230\",\n                \"kelurahan_desa_kode\": \"001\",\n                \"kewarganegaraan_pengusaha\": null,\n                \"negara_kode\": null,\n                \"pajak_jeniswp\": null,\n                \"pajak_skala_usaha\": null,\n                \"pajak_statuswp\": null,\n                \"provinsi_kode\": \"61\",\n                \"sektor_institusi\": null,\n                \"status_perusahaan\": null,\n                \"produk_perusahaan\": \"JASA PEMBUATAN DESAIN INTERIOR\",\n                \"kbki_produk_perusahaan\": null,\n                \"aktivitas_perusahaan\": \"JASA PEMBUATAN DESAIN INTERIOR\",\n                \"kategori_aktivitas_perusahaan\": \"F\",\n                \"kbli_aktivitas_perusahaan\": \"43304\",\n                \"pemegang_saham\": null,\n                \"presentase_saham\": null,\n                \"alamat_email_perusahaan\": null,\n                \"alamat_fax_perusahaan\": null,\n                \"alamat_telepon_perusahaan\": null,\n                \"alamat_web_perusahaan\": null,\n                \"kontak_perusahaan_nama\": \"CHALIF ZULKARNAIN\",\n                \"kontak_perusahaan_email\": null,\n                \"kontak_perusahaan_nomor_telepon\": null\n            }\n        ]\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Data Assessment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id_alokasi\": \"45890\",\r\n    \"idsbr\": \"97251660\",\r\n    \"alamat\": \"JALAN RAYA REMBANG BLORA KM 5 RT:  RW:  KODEPOS: 59219\",    \r\n    \"aset\": null,\r\n    \"jam_buka\": null,\r\n    \"jam_tutup\": null,\r\n    \"jenis_kelamin_pengusaha\": null,\r\n    \"jumlah_kamar\": null,\r\n    \"kode_pos\": \"59219\",\r\n    \"kodese\": null,\r\n    \"latitude\": null,\r\n    \"longitude\": null,\r\n    \"multi_national_status\": null,\r\n    \"nama\": \"NATURAL CV <KANTOR>\",\r\n    \"nama_komersial\": null,\r\n    \"nomor_kode_area\": null,\r\n    \"npwp\": null,\r\n    \"pajak_tahun_pendaftarannpwp\": null,\r\n    \"pajak_tahunspt\": null,\r\n    \"pajak_tanggal_update\": null,\r\n    \"pendapatan_per_tahun\": \"4883769100.0\",\r\n    \"pengeluaran_per_tahun\": \"4248879731.0\",\r\n    \"pengusaha_pemilik\": null,\r\n    \"skala_usaha\": null,\r\n    \"status_kepemilikan\": null,\r\n    \"tahun_beroperasi\": null,\r\n    \"tahun_pendirian\": null,\r\n    \"tahun_ref_aset\": null,\r\n    \"tahun_ref_kompensasi_asing\": null,\r\n    \"tahun_ref_kompensasi_lokal\": null,\r\n    \"tahun_ref_pendapatan\": null,\r\n    \"tahun_ref_pengeluaran\": null,\r\n    \"tahun_ref_skala_usaha\": null,\r\n    \"tahun_ref_tenaga_kerja_asing\": null,\r\n    \"tahun_ref_tenaga_kerja_lokal\": null,\r\n    \"tanggal_lahir_pengusaha\": null,\r\n    \"total_kompensasi_asing_per_tahun\": null,\r\n    \"total_kompensasi_lokal_per_tahun\": null,\r\n    \"total_tenaga_kerja_asing_per_tahun\": null,\r\n    \"total_tenaga_kerja_lokal_per_tahun\": null,\r\n    \"unit_statistik\": null,\r\n    \"jaringan_usaha_id\": \"2\",\r\n    \"jenis_badan_hukum_badan_usaha_id\": \"2\",\r\n    \"kabupaten_kota_id\": \"17\",\r\n    \"kbji_pengusaha_id\": null,\r\n    \"kecamatan_id\": \"100\",\r\n    \"kelurahan_desa_id\": \"002\",\r\n    \"kewarganegaraan_pengusaha_id\": null,\r\n    \"negara_id\": null,\r\n    \"pajak_jeniswp_id\": null,\r\n    \"pajak_skala_usaha_id\": null,\r\n    \"pajak_statuswp_id\": null,\r\n    \"provinsi_id\": \"33\",\r\n    \"sektor_institusi_id\": null,\r\n    \"status_perusahaan_id\": null,\r\n\r\n    \"produk_perusahaan\": \"MEBEL DARI KAYU JATI\",\r\n    \"kbki_produk_perusahaan\": null,\r\n    \"aktivitas_perusahaan\": \"PEMBUATAN MEBEL DARI KAYU JATI\",\r\n    \"kategori_aktivitas_perusahaan\": \"C\",\r\n    \"kbli_aktivitas_perusahaan\": \"31001\",\r\n    \"pemegang_saham\": null,\r\n    \"presentase_saham\": null,\r\n    \"alamat_email_perusahaan\": null,\r\n    \"alamat_fax_perusahaan\": null,\r\n    \"alamat_telepon_perusahaan\": \"2956998188\",\r\n    \"alamat_web_perusahaan\": null,\r\n    \"kontak_perusahaan_nama\": \"BP SUYAT\",\r\n    \"kontak_perusahaan_email\": null,\r\n    \"kontak_perusahaan_nomor_telepon\": null\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://webapps.bps.go.id/pengolahansbr/matcha-backend/api/kegiatan/2/assessment/2",
+					"protocol": "https",
+					"host": [
+						"webapps",
+						"bps",
+						"go",
+						"id"
+					],
+					"path": [
+						"pengolahansbr",
+						"matcha-backend",
+						"api",
+						"kegiatan",
+						"2",
+						"assessment",
+						"2"
+					]
+				},
+				"description": "Menyimpan data hasil assessment\n\nhttps://webapps.bps.go.id/pengolahansbr/matcha-backend/api/kegiatan/{{id_kegiatan}}/assessment/{{id_user}}"
+			},
+			"response": [
+				{
+					"name": "Data Assessment",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id_perusahaan\": \"1063272\",\r\n    \"id_alokasi\": \"30920\",\r\n    \"idsbr\": \"95731043\",\r\n    \"alamat\": \"JALAN RAYA REMBANG BLORA KM 5 RT:  RW:  KODEPOS: 59219 - Edited\",    \r\n    \"aset\": \"0.0\",\r\n    \"jam_buka\": null,\r\n    \"jam_tutup\": null,\r\n    \"jenis_kelamin_pengusaha\": null,\r\n    \"jumlah_kamar\": null,\r\n    \"kode_pos\": \"35377\",\r\n    \"kodese\": null,\r\n    \"latitude\": null,\r\n    \"longitude\": null,\r\n    \"multi_national_status\": null,\r\n    \"nama\": \"KIKIMKEDURANGJAYA HENDRIK, PT\",\r\n    \"nama_komersial\": \"\",\r\n    \"nomor_kode_area\": \"813\",\r\n    \"npwp\": null,\r\n    \"pajak_tahun_pendaftarannpwp\": null,\r\n    \"pajak_tahunspt\": null,\r\n    \"pajak_tanggal_update\": null,\r\n    \"pendapatan_per_tahun\": \"0.0\",\r\n    \"pengeluaran_per_tahun\": \"0.0\",\r\n    \"pengusaha_pemilik\": \"HENDRIK\",\r\n    \"skala_usaha\": \"SBR_KECIL\",\r\n    \"status_kepemilikan\": null,\r\n    \"tahun_beroperasi\": \"2012\",\r\n    \"tahun_pendirian\": null,\r\n    \"tahun_ref_aset\": null,\r\n    \"tahun_ref_kompensasi_asing\": null,\r\n    \"tahun_ref_kompensasi_lokal\": null,\r\n    \"tahun_ref_pendapatan\": null,\r\n    \"tahun_ref_pengeluaran\": null,\r\n    \"tahun_ref_skala_usaha\": null,\r\n    \"tahun_ref_tenaga_kerja_asing\": null,\r\n    \"tahun_ref_tenaga_kerja_lokal\": null,\r\n    \"tanggal_lahir_pengusaha\": null,\r\n    \"total_kompensasi_asing_per_tahun\": null,\r\n    \"total_kompensasi_lokal_per_tahun\": null,\r\n    \"total_tenaga_kerja_asing_per_tahun\": null,\r\n    \"total_tenaga_kerja_lokal_per_tahun\": \"108\",\r\n    \"unit_statistik\": \"SBR_ENTERPRISE\",\r\n    \"jaringan_usaha_id\": null,\r\n    \"jenis_badan_hukum_badan_usaha_id\": \"1\",\r\n    \"kabupaten_kota_id\": \"685\",\r\n    \"kbji_pengusaha_id\": null,\r\n    \"kecamatan_id\": \"10526\",\r\n    \"kelurahan_desa_id\": \"138500\",\r\n    \"kewarganegaraan_pengusaha_id\": null,\r\n    \"negara_id\": \"28\",\r\n    \"pajak_jeniswp_id\": null,\r\n    \"pajak_skala_usaha_id\": null,\r\n    \"pajak_statuswp_id\": null,\r\n    \"provinsi_id\": \"44\",\r\n    \"sektor_institusi_id\": null,\r\n    \"status_perusahaan_id\": \"1\",\r\n    \"produk_perusahaan\": [\r\n        {\r\n            \"id\": null,\r\n            \"produk\": \"Produk Lainnya - Edited\",\r\n            \"kbki\": null,\r\n            \"perusahaan_id\": null\r\n        }\r\n    ],\r\n    \"aktivitas_perusahaan\": [\r\n        {\r\n            \"id\": \"260881\",\r\n            \"aktivitas\": \"JASA PEMASANG LISTRIK\",\r\n            \"jenis\": \"SBR_MAIN_ACTIVITY\",\r\n            \"kategori\": \"F\",\r\n            \"kbli\": \"43211\",\r\n            \"perusahaan_id\": \"1063272\"\r\n        },\r\n        {\r\n            \"id\": null,\r\n            \"aktivitas\": \"JASA PEMASANG LISTRIK LAINNYA - edited\",\r\n            \"jenis\": \"SBR_MAIN_ACTIVITY\",\r\n            \"kategori\": \"F\",\r\n            \"kbli\": \"43211\",\r\n            \"perusahaan_id\": null\r\n        }\r\n    ],\r\n    \"pemegang_saham\": [\r\n        {\r\n            \"id\": null,\r\n            \"pemegang_saham\": \"Ahmad\",\r\n            \"persentase_saham\": \"30\",\r\n            \"pemegang_saham_perusahaan_id\": null,\r\n            \"perusahaan_id\": null\r\n        }\r\n    ],\r\n    \"alamat_email_perusahaan\": [\r\n        {\r\n            \"id\": null,\r\n            \"email\": \"asd@gmail.com\",\r\n            \"perusahaan_id\": null\r\n        }\r\n    ],\r\n    \"alamat_fax_perusahaan\": [\r\n        {\r\n            \"id\": null,\r\n            \"nomor_faksimili\": \"08888231\",\r\n            \"perusahaan_id\": null\r\n        }\r\n    ],\r\n    \"alamat_telepon_perusahaan\": [\r\n        {\r\n            \"id\": null,\r\n            \"nomor_ekstensi\": \"0262\",\r\n            \"nomor_telepon\": \"288129\",\r\n            \"perusahaan_id\": null\r\n        }\r\n    ],\r\n    \"alamat_web_perusahaan\": [\r\n        {\r\n            \"id\": null,\r\n            \"website\": \"asdf.com\",\r\n            \"perusahaan_id\": null\r\n        }\r\n    ],\r\n    \"kontak_perusahaan\": [\r\n        {\r\n            \"id\" : null,\r\n            \"email\": \"asd@gmail.com\",\r\n            \"nama\": \"Abdul\",\r\n            \"nomor_telepon\": null,\r\n            \"kbji_id\": null,\r\n            \"perusahaan_id\": null\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost/matcha-backend/api/kegiatan/2/assessment/2",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"matcha-backend",
+								"api",
+								"kegiatan",
+								"2",
+								"assessment",
+								"2"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 21 Mar 2022 18:23:14 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache/2.4.33 (Win32) OpenSSL/1.0.2o PHP/5.6.36"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/5.6.36"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Content-Length",
+							"value": "2689"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5, max=100"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"meta\": {\n        \"code\": 200,\n        \"status\": \"success\",\n        \"message\": \"Berhasil menyimpan hasil assessment\"\n    },\n    \"data\": {\n        \"id_perusahaan\": \"1063272\",\n        \"id_alokasi\": \"30920\",\n        \"idsbr\": \"95731043\",\n        \"alamat\": \"JALAN RAYA REMBANG BLORA KM 5 RT:  RW:  KODEPOS: 59219 - Edited\",\n        \"aset\": \"0.0\",\n        \"jam_buka\": null,\n        \"jam_tutup\": null,\n        \"jenis_kelamin_pengusaha\": null,\n        \"jumlah_kamar\": null,\n        \"kode_pos\": \"35377\",\n        \"kodese\": null,\n        \"latitude\": null,\n        \"longitude\": null,\n        \"multi_national_status\": null,\n        \"nama\": \"KIKIMKEDURANGJAYA HENDRIK, PT\",\n        \"nama_komersial\": null,\n        \"nomor_kode_area\": \"813\",\n        \"npwp\": null,\n        \"pajak_tahun_pendaftarannpwp\": null,\n        \"pajak_tahunspt\": null,\n        \"pajak_tanggal_update\": null,\n        \"pendapatan_per_tahun\": \"0.0\",\n        \"pengeluaran_per_tahun\": \"0.0\",\n        \"pengusaha_pemilik\": \"HENDRIK\",\n        \"skala_usaha\": \"SBR_KECIL\",\n        \"status_kepemilikan\": null,\n        \"tahun_beroperasi\": \"2012\",\n        \"tahun_pendirian\": null,\n        \"tahun_ref_aset\": null,\n        \"tahun_ref_kompensasi_asing\": null,\n        \"tahun_ref_kompensasi_lokal\": null,\n        \"tahun_ref_pendapatan\": null,\n        \"tahun_ref_pengeluaran\": null,\n        \"tahun_ref_skala_usaha\": null,\n        \"tahun_ref_tenaga_kerja_asing\": null,\n        \"tahun_ref_tenaga_kerja_lokal\": null,\n        \"tanggal_lahir_pengusaha\": null,\n        \"total_kompensasi_asing_per_tahun\": null,\n        \"total_kompensasi_lokal_per_tahun\": null,\n        \"total_tenaga_kerja_asing_per_tahun\": null,\n        \"total_tenaga_kerja_lokal_per_tahun\": \"108\",\n        \"unit_statistik\": \"SBR_ENTERPRISE\",\n        \"jaringan_usaha_id\": null,\n        \"jenis_badan_hukum_badan_usaha_id\": \"1\",\n        \"kabupaten_kota_id\": \"685\",\n        \"kbji_pengusaha_id\": null,\n        \"kecamatan_id\": \"10526\",\n        \"kelurahan_desa_id\": \"138500\",\n        \"kewarganegaraan_pengusaha_id\": null,\n        \"negara_id\": \"28\",\n        \"pajak_jeniswp_id\": null,\n        \"pajak_skala_usaha_id\": null,\n        \"pajak_statuswp_id\": null,\n        \"provinsi_id\": \"44\",\n        \"sektor_institusi_id\": null,\n        \"status_perusahaan_id\": \"1\",\n        \"produk_perusahaan\": [\n            {\n                \"id\": null,\n                \"produk\": \"Produk Lainnya - Edited\",\n                \"kbki\": null,\n                \"perusahaan_id\": null\n            }\n        ],\n        \"aktivitas_perusahaan\": [\n            {\n                \"id\": \"260881\",\n                \"aktivitas\": \"JASA PEMASANG LISTRIK\",\n                \"jenis\": \"SBR_MAIN_ACTIVITY\",\n                \"kategori\": \"F\",\n                \"kbli\": \"43211\",\n                \"perusahaan_id\": \"1063272\"\n            },\n            {\n                \"id\": null,\n                \"aktivitas\": \"JASA PEMASANG LISTRIK LAINNYA - edited\",\n                \"jenis\": \"SBR_MAIN_ACTIVITY\",\n                \"kategori\": \"F\",\n                \"kbli\": \"43211\",\n                \"perusahaan_id\": null\n            }\n        ],\n        \"pemegang_saham\": [\n            {\n                \"id\": null,\n                \"pemegang_saham\": \"Ahmad\",\n                \"persentase_saham\": \"30\",\n                \"pemegang_saham_perusahaan_id\": null,\n                \"perusahaan_id\": null\n            }\n        ],\n        \"alamat_email_perusahaan\": [\n            {\n                \"id\": null,\n                \"email\": \"asd@gmail.com\",\n                \"perusahaan_id\": null\n            }\n        ],\n        \"alamat_fax_perusahaan\": [\n            {\n                \"id\": null,\n                \"nomor_faksimili\": \"08888231\",\n                \"perusahaan_id\": null\n            }\n        ],\n        \"alamat_telepon_perusahaan\": [\n            {\n                \"id\": null,\n                \"nomor_ekstensi\": \"0262\",\n                \"nomor_telepon\": \"288129\",\n                \"perusahaan_id\": null\n            }\n        ],\n        \"alamat_web_perusahaan\": [\n            {\n                \"id\": null,\n                \"website\": \"asdf.com\",\n                \"perusahaan_id\": null\n            }\n        ],\n        \"kontak_perusahaan\": [\n            {\n                \"id\": null,\n                \"email\": \"asd@gmail.com\",\n                \"nama\": \"Abdul\",\n                \"nomor_telepon\": null,\n                \"kbji_id\": null,\n                \"perusahaan_id\": null\n            }\n        ]\n    }\n}"
+				}
+			]
+		}
+	]
+}
