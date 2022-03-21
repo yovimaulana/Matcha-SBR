@@ -315,12 +315,13 @@ create table assessment_results_kontak_perusahaan (
     perusahaan_id BIGINT null
 );
 
-create table assessment_results_pemegang_saham (
-    id int identity(1,1) primary key,
+create table matcha_assessment_results_pemegang_saham (
+    id bigint identity(1,1) primary key,
     id_alokasi int not null,
     id_pemegang_saham BIGINT null,
     pemegang_saham varchar(255) null,    
-    presentase_saham float null,    
+    persentase_saham float null,    
+    pemegang_saham_perusahaan_id INT NULL,
     perusahaan_id BIGINT null
 );
 
